@@ -1,5 +1,5 @@
 ---
-title: 'Gala: A Python package for galactic dynamics'
+title: 'PLIF'
 tags:
   - matlab
   - astronomy
