@@ -40,42 +40,37 @@ Optical measurement methods in fluid dynamics are an extensively used and unders
 Planar Laser Induced Fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This technique is a useful tool to calculate dispersive fluxes when combined with particle image velocimetry, and can provide previously unavailable insight into fluid flows. This technique being quantitative is what causes it to differ from dye based flow visualisation, and calculating a field of scalar concentration from an image of a species in a flow field requires an accurate calibration. A full PLIF calibration must be done for every pixel in an image and plots the measured light intensity at each pixel, against it's equivalent dye concentration.
 
 
-\begin{eqfloat}
-\begin{equation}
+$$
 E=a(c\ast I)
-\end{equation}
+
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
 \label{epsilon_emittance_eq}
-\end{eqfloat}
+
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
 
-\begin{eqfloat}
-\begin{equation}
+$$
 A=\varepsilon bc
-\end{equation}
+
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
 \label{BL_law_equation}
-\end{eqfloat}
+
 
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
 
-\begin{eqfloat}
-\begin{equation}
+$$
 A=I_{x}-I_{y}
-\end{equation}
+
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
 \label{BL_law_rearrangement}
-\end{eqfloat}
 
-\begin{eqfloat}
-\begin{equation}
+
+$$
 I_{x}-I_{y} = \varepsilon bc
-\end{equation}
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
 \label{BL_law_rearranged}
-\end{eqfloat}
+
 
 
 # Statement of need
