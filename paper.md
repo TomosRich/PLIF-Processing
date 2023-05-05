@@ -35,15 +35,10 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 
 # Summary
 
-The forces on stars, galaxies, and dark matter under external gravitational
-fields lead to the dynamical evolution of structures in the universe. The orbits
-of these bodies are therefore key to understanding the formation, history, and
-future state of galaxies. The field of "galactic dynamics," which aims to model
-the gravitating components of galaxies to study their structure and evolution,
-is now well-established, commonly taught, and frequently used in astronomy.
-Aside from toy problems and demonstrations, the majority of problems require
-efficient numerical tools, many of which require the same base code (e.g., for
-performing numerical orbit integration).
+Optical measurement methods in fluid dynamics are an extensively used and understood field, there are several intrinsic advantages to this category of techniques. First of which is that they can be used to observe an entire plane of a flow at once, as opposed to techniques like hot wire annemometry, which take point measurements. Optical techniques are also non intrusive, and therefore exert little influence on the flow itself.
+
+Planar Laser Induced Fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This technique is a useful tool to calculate dispersive fluxes when combined with particle image velocimetry, and can provide previously unavailable insight into fluid flows. This technique being quantitative is what causes it to differ from dye based flow visualisation, and calculating a field of scalar concentration from an image of a species in a flow field requires an accurate calibration. A full PLIF calibration must be done for every pixel in an image and plots the measured light intensity at each pixel, against it's equivalent dye concentration.
+
 
 # Statement of need
 
