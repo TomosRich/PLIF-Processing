@@ -1,7 +1,7 @@
 ---
 title: 'Gala: A Python package for galactic dynamics'
 tags:
-  - Python
+  - Matlab
   - astronomy
   - dynamics
   - galactic dynamics
