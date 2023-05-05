@@ -40,8 +40,7 @@ Optical measurement methods in fluid dynamics are an extensively used and unders
 Planar Laser Induced Fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This technique is a useful tool to calculate dispersive fluxes when combined with particle image velocimetry, and can provide previously unavailable insight into fluid flows. This technique being quantitative is what causes it to differ from dye based flow visualisation, and calculating a field of scalar concentration from an image of a species in a flow field requires an accurate calibration. A full PLIF calibration must be done for every pixel in an image and plots the measured light intensity at each pixel, against it's equivalent dye concentration.
 
 
-$$
-E=a(c\ast I)
+$$E=a(c\ast I)
 
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
@@ -50,8 +49,7 @@ constant, c is the dye concentration, and I is the light intensity}
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
 
-$$
-A=\varepsilon bc
+$$A=\varepsilon bc
 
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
 \label{BL_law_equation}
@@ -59,15 +57,13 @@ A=\varepsilon bc
 
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
 
-$$
-A=I_{x}-I_{y}
+$$A=I_{x}-I_{y}
 
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
 \label{BL_law_rearrangement}
 
 
-$$
-I_{x}-I_{y} = \varepsilon bc
+$$I_{x}-I_{y} = \varepsilon bc
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
 \label{BL_law_rearranged}
 
