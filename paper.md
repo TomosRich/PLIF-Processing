@@ -102,7 +102,7 @@ Use of the PLIF technique is unfortunately limited currently within the academic
 
 The current version of this software package is intended to take a total of 7 images sets as input, with each image set being averaged down to a single image as step 1. The first set of images should be of the test section with the laser on and no dye present. The next three sets of images showing the test section with a dye calibration tank, slightly moved in between each set of images, the concentration of dye within the tank must be known. The last three sets, showing the same but with a tank of a different, also known, concentration.
 
-Methods to calculate the absorptivity $(\(\varepsilon\))$ of a solution vary, this software package includes a preliminary version of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional.
+Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this software package includes a preliminary version of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional.
 
 
 # Citations
