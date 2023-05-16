@@ -61,42 +61,42 @@ design, and support for Astropy functionality in `Gala` will enable exciting
 scientific explorations of forthcoming data releases from the *Gaia* mission
 [@gaia] by students and experts alike.
 
-\begin{eqfloat}
+
 \begin{equation}
 E=a(c\ast I)
 \end{equation}
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
 \label{epsilon_emittance_eq}
-\end{eqfloat}
+
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
 
-\begin{eqfloat}
+
 \begin{equation}
 A=\varepsilon bc
 \end{equation}
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
 \label{BL_law_equation}
-\end{eqfloat}
+
 
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
 
-\begin{eqfloat}
+
 \begin{equation}
 A=I_{x}-I_{y}
 \end{equation}
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
 \label{BL_law_rearrangement}
-\end{eqfloat}
 
-\begin{eqfloat}
+
+
 \begin{equation}
 I_{x}-I_{y} = \varepsilon bc
 \end{equation}
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
 \label{BL_law_rearranged}
-\end{eqfloat}
+
 
 Use of the PLIF technique is unfortunately limited currently within the academic community, with particle image velocimetry being a far more widespread and developed measurement technique. It is hoped that this software package being released as an open source tool will help in use and further development of the PLIF technique. This software package was developed in MATLAB, and currently exists as a package of functions to be called by the user's main function. The University of Southampton Research Software Group is assisting to publish these codes, which will be available on GitHub.
 
