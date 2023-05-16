@@ -62,51 +62,51 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 [@gaia] by students and experts alike.
 
 
-\begin{equation}
+$$
 E=a(c\ast I)
 
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
 \label{epsilon_emittance_eq}
 
-\end{equation}
+$$
 
 
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
 
 
-\begin{equation}
+$$
 A=\varepsilon bc
 
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
 \label{BL_law_equation}
 
-\end{equation}
+$$
 
 
 
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
 
 
-\begin{equation}
+$$
 A=I_{x}-I_{y}
 
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
 \label{BL_law_rearrangement}
 
-\end{equation}
+$$
 
 
 
 
-\begin{equation}
+$$
 I_{x}-I_{y} = \varepsilon bc
 
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
 \label{BL_law_rearranged}
 
-\end{equation}
+$$
 
 
 
