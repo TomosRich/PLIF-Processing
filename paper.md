@@ -40,6 +40,27 @@ Optical measurement methods in fluid dynamics are an extensively used and unders
 Planar Laser Induced Fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This technique is a useful tool to calculate dispersive fluxes when combined with particle image velocimetry, and can provide previously unavailable insight into fluid flows. This technique being quantitative is what causes it to differ from dye based flow visualisation, and calculating a field of scalar concentration from an image of a species in a flow field requires an accurate calibration. A full PLIF calibration must be done for every pixel in an image and plots the measured light intensity at each pixel, against it's equivalent dye concentration.
 
 # Statement of need
+
+`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
+enables wrapping low-level languages (e.g., C) for speed without losing
+flexibility or ease-of-use in the user-interface. The API for `Gala` was
+designed to provide a class-based and user-friendly interface to fast (C or
+Cython-optimized) implementations of common operations such as gravitational
+potential and force evaluation, orbit integration, dynamical transformations,
+and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
+interfaces well with the implementations of physical units and astronomical
+coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
+`astropy.coordinates`).
+
+`Gala` was designed to be used by both astronomical researchers and by
+students in courses on gravitational dynamics or astronomy. It has already been
+used in a number of scientific publications [@Pearson:2017] and has also been
+used in graduate courses on Galactic dynamics to, e.g., provide interactive
+visualizations of textbook material [@Binney:2008]. The combination of speed,
+design, and support for Astropy functionality in `Gala` will enable exciting
+scientific explorations of forthcoming data releases from the *Gaia* mission
+[@gaia] by students and experts alike.
+
 \begin{eqfloat}
 \begin{equation}
 E=a(c\ast I)
