@@ -40,43 +40,50 @@ Optical measurement methods in fluid dynamics are an extensively used and unders
 Planar Laser Induced Fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This technique is a useful tool to calculate dispersive fluxes when combined with particle image velocimetry, and can provide previously unavailable insight into fluid flows. This technique being quantitative is what causes it to differ from dye based flow visualisation, and calculating a field of scalar concentration from an image of a species in a flow field requires an accurate calibration. A full PLIF calibration must be done for every pixel in an image and plots the measured light intensity at each pixel, against it's equivalent dye concentration.
 
 # Statement of need
-
-`Gala` is an Astropy-affiliated Python package for galactic dynamics. Python
-enables wrapping low-level languages (e.g., C) for speed without losing
-flexibility or ease-of-use in the user-interface. The API for `Gala` was
-designed to provide a class-based and user-friendly interface to fast (C or
-Cython-optimized) implementations of common operations such as gravitational
-potential and force evaluation, orbit integration, dynamical transformations,
-and chaos indicators for nonlinear dynamics. `Gala` also relies heavily on and
-interfaces well with the implementations of physical units and astronomical
-coordinate systems in the `Astropy` package [@astropy] (`astropy.units` and
-`astropy.coordinates`).
-
-`Gala` was designed to be used by both astronomical researchers and by
-students in courses on gravitational dynamics or astronomy. It has already been
-used in a number of scientific publications [@Pearson:2017] and has also been
-used in graduate courses on Galactic dynamics to, e.g., provide interactive
-visualizations of textbook material [@Binney:2008]. The combination of speed,
-design, and support for Astropy functionality in `Gala` will enable exciting
-scientific explorations of forthcoming data releases from the *Gaia* mission
-[@gaia] by students and experts alike.
-
-# Mathematics
-
-Single dollars ($) are required for inline mathematics e.g. $f(x) = e^{\pi/x}$
-
-Double dollars make self-standing equations:
-
-$$\Theta(x) = \left\{\begin{array}{l}
-0\textrm{ if } x < 0\cr
-1\textrm{ else}
-\end{array}\right.$$
-
-You can also use plain \LaTeX for equations
-\begin{equation}\label{eq:fourier}
-\hat f(\omega) = \int_{-\infty}^{\infty} f(x) e^{i\omega x} dx
+\begin{eqfloat}
+\begin{equation}
+E=a(c\ast I)
 \end{equation}
-and refer to \autoref{eq:fourier} from text.
+\caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
+constant, c is the dye concentration, and I is the light intensity}
+\label{epsilon_emittance_eq}
+\end{eqfloat}
+
+Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
+
+\begin{eqfloat}
+\begin{equation}
+A=\varepsilon bc
+\end{equation}
+\caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
+\label{BL_law_equation}
+\end{eqfloat}
+
+In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
+
+\begin{eqfloat}
+\begin{equation}
+A=I_{x}-I_{y}
+\end{equation}
+\caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
+\label{BL_law_rearrangement}
+\end{eqfloat}
+
+\begin{eqfloat}
+\begin{equation}
+I_{x}-I_{y} = \varepsilon bc
+\end{equation}
+\caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
+\label{BL_law_rearranged}
+\end{eqfloat}
+
+Use of the PLIF technique is unfortunately limited currently within the academic community, with particle image velocimetry being a far more widespread and developed measurement technique. It is hoped that this software package being released as an open source tool will help in use and further development of the PLIF technique. This software package was developed in MATLAB, and currently exists as a package of functions to be called by the user's main function. The University of Southampton Research Software Group is assisting to publish these codes, which will be available on GitHub.
+
+
+The current version of this software package is intended to take a total of 7 images sets as input, with each image set being averaged down to a single image as step 1. The first set of images should be of the test section with the laser on and no dye present. The next three sets of images showing the test section with a dye calibration tank, slightly moved in between each set of images, the concentration of dye within the tank must be known. The last three sets, showing the same but with a tank of a different, also known, concentration.
+
+Methods to calculate the absorptivity (\(\varepsilon\)) of a solution vary, this software package includes a preliminary version of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional.
+
 
 # Citations
 
