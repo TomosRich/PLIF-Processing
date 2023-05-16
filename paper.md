@@ -68,6 +68,7 @@ E=a(c\ast I)
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
 \label{epsilon_emittance_eq}
+
 \end{equation}
 
 
@@ -80,6 +81,7 @@ A=\varepsilon bc
 
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
 \label{BL_law_equation}
+
 \end{equation}
 
 
@@ -92,6 +94,7 @@ A=I_{x}-I_{y}
 
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
 \label{BL_law_rearrangement}
+
 \end{equation}
 
 
@@ -102,6 +105,7 @@ I_{x}-I_{y} = \varepsilon bc
 
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
 \label{BL_law_rearranged}
+
 \end{equation}
 
 
