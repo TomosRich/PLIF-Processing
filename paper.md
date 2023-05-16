@@ -67,8 +67,9 @@ E=a(c\ast I)
 
 \caption{Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity}
-\end{equation}
 \label{epsilon_emittance_eq}
+\end{equation}
+
 
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E).
@@ -78,8 +79,9 @@ Conducting this full pixel by pixel calibration allows the constant (a) and the 
 A=\varepsilon bc
 
 \caption{The Beer-Lambert law, where A is absorbance, \(\varepsilon\) is absorptivity, b is path length, and c is concentration}
-\end{equation}
 \label{BL_law_equation}
+\end{equation}
+
 
 
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law.
@@ -89,8 +91,9 @@ In order to know the light intensity (\(i\)) at each pixel, using calibration im
 A=I_{x}-I_{y}
 
 \caption{A is equal to Absorbance, \(I_{x}\) is light intensity at x, and \(I_{y}\) is light intensity at y.}
-\end{equation}
 \label{BL_law_rearrangement}
+\end{equation}
+
 
 
 
@@ -98,8 +101,9 @@ A=I_{x}-I_{y}
 I_{x}-I_{y} = \varepsilon bc
 
 \caption{A rearrangement of the Beer Lambert law. \(I_{x}\) is light intensity at x, \(I_{y}\) is light intensity at y, \(\varepsilon\) is absorptivity, b is path length between a and b, and c is concentration}
-\end{equation}
 \label{BL_law_rearranged}
+\end{equation}
+
 
 
 Use of the PLIF technique is unfortunately limited currently within the academic community, with particle image velocimetry being a far more widespread and developed measurement technique. It is hoped that this software package being released as an open source tool will help in use and further development of the PLIF technique. This software package was developed in MATLAB, and currently exists as a package of functions to be called by the user's main function. The University of Southampton Research Software Group is assisting to publish these codes, which will be available on GitHub.
