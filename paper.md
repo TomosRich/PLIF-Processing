@@ -64,7 +64,6 @@ scientific explorations of forthcoming data releases from the *Gaia* mission
 
 $$
 E=a(c\ast I)
-
 $$
 Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, c is the dye concentration, and I is the light intensity
@@ -75,7 +74,6 @@ Conducting this full pixel by pixel calibration allows the constant (a) and the 
 
 $$
 A=\varepsilon bc
-
 $$
 The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration
 
@@ -92,7 +90,6 @@ A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light 
 
 $$
 I_{x}-I_{y} = \varepsilon bc
-
 $$
 A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration
 
