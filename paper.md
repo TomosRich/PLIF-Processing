@@ -1,5 +1,5 @@
 ---
-title: 'PLIF'
+title: 'A Comprehensive Planar Laser Induced Fluorescence Software Package'
 tags:
   - matlab
   - astronomy
