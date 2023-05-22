@@ -1,6 +1,4 @@
 ---
-\usepackage[framemethod=tikz]{mdframed}
-\mdfsetup{nobreak=true}
 title: 'A Comprehensive Planar Laser Induced Fluorescence Software Package'
 tags:
   - matlab
@@ -83,7 +81,7 @@ Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this sof
 
 Below is a list of all the function to be included in the package:
 
-\begin{mdframed}
+
 {\bf PLIF Calibration functions - calib\_calculate\_coefficients}
 \begin{enumerate}
 
@@ -193,7 +191,6 @@ Below is a list of all the function to be included in the package:
     Output: Relative background intensity.
 
 \end{enumerate}
-\end{mdframed}
 
 
 # Citations
