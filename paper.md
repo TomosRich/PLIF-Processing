@@ -1,4 +1,6 @@
 ---
+\usepackage[framemethod=tikz]{mdframed}
+\mdfsetup{nobreak=true}
 title: 'A Comprehensive Planar Laser Induced Fluorescence Software Package'
 tags:
   - matlab
