@@ -2,25 +2,26 @@
 title: 'A Comprehensive Planar Laser Induced Fluorescence Software Package'
 tags:
   - matlab
-  - astronomy
-  - dynamics
-  - galactic dynamics
-  - milky way
+  - planar lasr induced fluorescence
+  - post-processing
+  - aerodynamics
+  - experimental
 authors:
   - name: T. Rich
     orcid: 0000-0002-6259-4225
     equal-contrib: true
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
-    equal-contrib: true # (This is how you can denote equal contributions between multiple authors)
-    affiliation: 2
+    affiliation: 1
+  - name: C. Vanderwel
+  - orcid: 0000-0002-6259-4225
+    equal-contrib: true 
+    affiliation: 1
   - name: Author with no affiliation
     corresponding: true # (This is how to denote the corresponding author)
     affiliation: 3
 affiliations:
- - name: Lyman Spitzer, Jr. Fellow, Princeton University, USA
+ - name: University of Southampton, United Kingdom
    index: 1
- - name: Institution Name, Country
+ - name: Organisation, Country
    index: 2
  - name: Independent Researcher, Country
    index: 3
