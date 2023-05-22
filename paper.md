@@ -79,6 +79,120 @@ The current version of this software package is intended to take a total of 7 im
 
 Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this software package includes a preliminary version of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional.
 
+Below is a list of all the function to be included in the package:
+
+\begin{mdframed}[hidealllines=true,backgroundcolor=blue!10]
+{\bf PLIF Calibration functions - calib\_calculate\_coefficients}
+\begin{enumerate}
+
+    \item Average - calib\_average\_frames : A function to average the sets of images used for each calibration tank position.
+    
+    Input: 7 sets of images
+    
+    Output: 7 Images
+    
+    \item Merge - calib\_merge\_frames : A function to merge the 3 tank positions for each dye concentration. The background image does not need merging.
+    
+    Input: 2 sets of 3 images
+    
+    Output: 2 Images
+    
+    \item Trace Rays - calib\_trace\_rays : A function requiring user input to calculate the laser origin based on visible laser lines in the calibration images. In this step sections of the image can also be selected to be deleted and interpolated. 
+    
+    Input: Laser streak locations.
+    
+    Output: Laser Source coordinates.
+    
+    \item Correct Attenuation - calib\_correct\_attenuation : Application of attenuation correction using molar apsorptivity(Epsilon), laser source location, and out of frame tank height.
+    
+    Input: Molar apsorptivity, out of frame tank height, 2 images.
+    
+    Output: 2 Images.
+
+
+    \item Background Intensity Gradient - calculate\_background\_intensity\_gradient : Uses GetBackgroundIntensity on every experiment image to plot the increase in background concentration between start and end of experiment.
+    
+    Input: All experimental Images.
+    
+    Output: Gradient of increase in background intensity .
+
+    \item Assess Calibration - calib\_attenuation\_summary\_figures : Prints output figures to check the final inputs to the calibration matrix
+    
+    Input: Background calibration image and two pre-processed calibration images.
+    
+    Output: Graphs to check validity of previous calirbation steps.
+    
+    \item Output Calibration - calib\_make\_final\_frame : Creates calibration curve for each pixel in image and exports as matrix.
+    
+    Input: Background calibration image and two pre-processed calibration images.
+    
+    Output: Final calibration matrix.
+    
+\end{enumerate}
+
+{\bf PLIF Processing Function - apply\_calibration\_coefficients}
+\begin{enumerate}
+    \item apply\_calibration\_coefficients: Applies calibration matrix to experimental images.
+    
+    Input: Experimental images, Calibration matrix.
+    
+    Output: Processed PLIF images.
+    
+\end{enumerate}
+
+{\bf Epsilon Optimisation Function}
+\begin{enumerate}
+    \item Epsilon Iteration - epsilon\_correct\_attenuation : Uses bisection method to optimise absorptivity value for calibration images.
+    
+    Input: Laser source coordinates, averaged and merged calibration images.
+    
+    Output: Optimal Epsilon value for this specific set of images.
+    
+\end{enumerate}
+
+
+{\bf File Accessing Sub-functions}
+\begin{enumerate}
+
+     \item get\_scale\_origin: Uses an image of the calibration plate to apply a user defined origin to all images.
+    
+    Input: Calibration Image, User input.
+    
+    Output: Image Origin in x and y.
+
+    \item get\_plif\_image: Reads image file, converts from select formats to numerical arrays.
+
+    Input: Path to image.
+
+    Output: Image as numerical array.
+
+    \item get\_laser\_origin: Uses user defined ray tracing to calculate origin of the laser sheet.
+
+    Input: Calibration Images, User input.
+
+    Output: Laser Origin in x and y.
+
+    \item get\_dye\_conc\_filenames: Creates list of file names for calibration concentrations.
+
+    Input: Concentrations of dye in calibration tanks.
+
+    Output: List of calibration image file names.
+
+    \item get\_default\_unset\_parameters: Uses default values from experiments carried out at Southampton as unset values.
+
+    Input: n/a
+
+    Output: Unset parameters.
+
+    \item get\_background\_intensity: Uses a selction of the freestream of the flow with no scalar to estimate the intensity of the background, relative to the original before the experiment began.
+    
+    Input: Experiment Image, Freestream location.
+    
+    Output: Relative background intensity.
+
+\end{enumerate}
+\end{mdframed}
+
 
 # Citations
 
