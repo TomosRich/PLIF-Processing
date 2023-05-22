@@ -11,20 +11,18 @@ authors:
     orcid: 0000-0002-6259-4225
     equal-contrib: true
     affiliation: 1
+    corresponding: true # (This is how to denote the corresponding author)
   - name: C. Vanderwel
-  - orcid: 0000-0002-6259-4225
+    orcid: 0000-0002-6259-4225
     equal-contrib: true 
     affiliation: 1
-  - name: Author with no affiliation
-    corresponding: true # (This is how to denote the corresponding author)
-    affiliation: 3
+  - name: E. Parkinson
+    orcid: 0000-0002-6259-4225
+    equal-contrib: true
+    affiliation: 1
 affiliations:
  - name: University of Southampton, United Kingdom
    index: 1
- - name: Organisation, Country
-   index: 2
- - name: Independent Researcher, Country
-   index: 3
 date: 13 August 2017
 bibliography: paper.bib
 
