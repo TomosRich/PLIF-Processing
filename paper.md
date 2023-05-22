@@ -81,7 +81,7 @@ Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this sof
 
 Below is a list of all the function to be included in the package:
 
-\begin{mdframed}[hidealllines=true,backgroundcolor=blue!10]
+\begin{mdframed}
 {\bf PLIF Calibration functions - calib\_calculate\_coefficients}
 \begin{enumerate}
 
