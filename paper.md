@@ -1,5 +1,5 @@
 ---
-title: 'A Comprehensive Planar Laser Induced Fluorescence Software Package'
+title: 'A Planar Laser Induced Fluorescence Software Package'
 tags:
   - matlab
   - planar laser induced fluorescence
@@ -9,17 +9,20 @@ tags:
 authors:
   - name: T. Rich
     orcid: 0000-0002-6259-4225
-    equal-contrib: true
+    
     affiliation: 1
-    corresponding: true # (This is how to denote the corresponding author)
-  - name: C. Vanderwel
-    orcid: 0000-0002-6259-4225
-    equal-contrib: true 
-    affiliation: 1
+    
+
   - name: E. Parkinson
     orcid: 0000-0002-6259-4225
-    equal-contrib: true
+    
     affiliation: 1
+
+  - name: C. Vanderwel
+    orcid: 0000-0002-6259-4225
+    
+    affiliation: 1
+    corresponding: true 
 affiliations:
  - name: University of Southampton, United Kingdom
    index: 1
