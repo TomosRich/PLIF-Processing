@@ -203,9 +203,6 @@ Below is a list of all the function to be included in the package:
 
 \end{enumerate}
 
-# Citations
-
-# Acknowledgements
 
 # References
 <div class="csl-entry">Crimaldi, J. P. (2008). Planar laser induced fluorescence in aqueous flows. <i>Experiments in Fluids</i>, <i>44</i>(6), 851–863. https://doi.org/10.1007/s00348-008-0496-2</div>
