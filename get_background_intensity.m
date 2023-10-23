@@ -21,10 +21,7 @@ function [background_intensity] = get_background_intensity(i, image_folder, imag
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022
+
 
     fsep = filesep;
     image = read_image(strcat(image_folder, fsep, 'B', num2str(i, '%04d'), '.', image_type));
@@ -39,7 +36,7 @@ function [background_intensity] = get_background_intensity(i, image_folder, imag
 
 end
 
-% this section is useful to check where youre aiming E in line 37 :)
+% this section is useful to check where youre aiming E in line 37 :), it should be a freestream section in which no dye is present
 
 %image(int16(4 * (nx / 8)):int16(7 * (nx / 8)), int16(1 * (ny/8)):int16(2 * (ny / 8))) = image(int16(4 * (nx / 8)):int16(7 * (nx /8)), int16(1 * (ny / 8)):int16(2 * (ny / 8)))*2;
 %imagesc(image)
