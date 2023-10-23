@@ -24,10 +24,6 @@ function calculate_background_intensity_gradient(directories, image_type, num_im
     %
     % Authors: Dr Edward Parkinson
     % University of Southampton
-    % Revisions:
-    %   HG Nov 2018
-    %   Created T Rich 04/2022
-    %   Modified T Rich 05/2023 changed Eframe limits
 
     % Load in the background intensity image, to get the size of the frame
     fsep = filesep;
