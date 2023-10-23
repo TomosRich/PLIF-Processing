@@ -26,14 +26,7 @@ function calib_average_frames(directories, concentrations, image_type, y0, x0, x
     % MAT-files required: geometric_scale.mat [optional]
     % Other files required: .im7 image files
     %
-    % Authors: Dr Christina Vanderwel, D Hertwig, Desmond Lim, Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Adjusted D Hertwig   20 June 2019
-    %   Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-    %   Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TimageL expts
-    %   Modified E Parkinson 15 Jul 2022 -> clean up for publication
-    %   Modified T Rich 23/05/2023 Fixed energy monitor input application
+
     fsep = filesep;
     concentration_files = get_dye_conc_filenames(concentrations);
 
