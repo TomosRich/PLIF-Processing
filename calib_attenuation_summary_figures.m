@@ -28,12 +28,7 @@ function calib_attenuation_summary_figures(directories, concentration_files, con
     % Authors: Dr Christina Vanderwel, D Hertwig, Desmond Lim, Dr Edward Parkinson
     % University of Southampton
     % Revisions:
-    %   Adjusted D Hertwig  20 June 2019
-    %   Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-    %   Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TBL expts
-    %   Modified E Parkinson 18 Jul 2022 -> refactor for publication
-    %   Modified T Rich May 2023 -> adjustments and expansion of output
-    %   graphs
+
     fsep = filesep;
 
     % Check the result
