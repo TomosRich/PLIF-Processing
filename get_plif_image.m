@@ -28,11 +28,7 @@ function PLIF = get_plif_image(i, directories, image_type, background_frame, A_c
     % Subfunctions: none
     % MAT-files required: none
     % Other files required: none
-    %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 22 Aug 2022
+
 
     fsep = filesep;
     image = read_image(strcat(directories.folder_plif, fsep, 'B', num2str(i, '%04d'), '.', image_type));
