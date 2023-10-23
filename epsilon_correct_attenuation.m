@@ -1,6 +1,4 @@
-% Adjusted D Hertwig  20 June 2019
-% Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-% Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TBL expts
+% Created - Tomos Rich, unfinished epsilon experimental code
 
 function [mean_list, concentration_list, dev_list] = epsilon_correct_attenuation(directories, concentrations, epsilon)
 
