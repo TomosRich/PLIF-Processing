@@ -18,11 +18,7 @@ function image = read_image(filepath)
     % Subfunctions: none
     % MAT-files required: none
     % Other files required: none
-    %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 24 Aug 2022
+
 
     [~, ~, ext] = fileparts(filepath);
 
