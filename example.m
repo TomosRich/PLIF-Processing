@@ -10,10 +10,7 @@
 % MAT-files required: none
 % Other files required: calibration files, image files, geometry files
 %
-% Authors: Dr Edward Parkinson
-% University of Southampton
-% Revisions:
-%   Created E Parkinson 11 Aug 2022 -> Create example script for how to use package
+
 
 % Add the required libraries/packages to the MATLAB path
 
