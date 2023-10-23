@@ -20,13 +20,7 @@ function calib_merge_frames(directories, concentrations)
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Christina Vanderwel, D Hertwig, Desmond Lim, Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    % Adjusted D Hertwig  20 Jun 2019
-    %   Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-    %   Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TBL expts
-    %   Modified E Parkinson 15 Jul 2022 -> clean up for publication
+
     fsep = filesep;
 
     for i = 1:length(concentrations)
