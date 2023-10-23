@@ -21,13 +21,7 @@ function calib_make_final_frame(directories, concentrations, epsilon)
     % MAT-files required: Processed .mat files from previous steps
     % Other files required: none
     %
-    % Authors: D Hertwig, Desmond Lim, Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Adjusted D Hertwig  20 June 2019
-    %   Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-    %   Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TBL expts
-    %   Modified E Parkinson 18 Jul 2022 -> refactor for publication
+
     %   Modified T Rich 23/05/2023 -> added A_cal3 calculation
 
     fsep = filesep;
