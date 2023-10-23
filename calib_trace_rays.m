@@ -25,15 +25,8 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Adjusted D Hertwig  20 June 2019
-    %   Modified Desmond Lim 19 Dec 2019 -> for unscaled raw PLIF image
-    %   Modified Desmond Lim 13 Jan 2022 -> for smooth-wall TBL expts
-    %   Modified E Parkinson 18 Jul 2022 -> refactor for publication
-    %   Modified T Rich 2023 fixed polar interpolation code, and added
-    %   horizontal extrapolation
+    %   horizontal extrapolation controlled in lines 95 - 104
+    %   radial extrapolation needs updating
 
     % TODO: we should construct this vector from given concentrations.
     % Choose dataset to look at and specify concentration
