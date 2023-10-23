@@ -30,14 +30,11 @@ image_type = 'im7';          % The image file extension
 
 % This struct defines the various directories which contain the LIF images and
 % calibration data, as well as the directory to store the program's output
-%"F:\LaVision_Processing\Rhodamine Jet\2022_Oct_Rhodamine Jet Closeup"
-%"F:\LaVision_Processing\Rhodamine Jet\2022_Oct_Rhodamine Jet Closeup\tube aligned cal - 190mm plate top right 4 dots"
 directories.folder_main = 'D:\Processing\Downstream_planar_p100\Properties';  % directory containing calibration info for data
 directories.folder_calib = 'D:\Processing\Downstream_planar_p100\Calibration p100\CalibrationExport';  % directory containing images used to calculate calibration coefficients
 directories.folder_plif = 'D:\Processing\Downstream_planar_p100\LIF_1';                         % directory containing images to be calibrated
 directories.folder_save = 'E:\Downstream_planar_p100\PLIF';  
 
-%"D:\Processing\Upstream_planar_p0\Properties"
 % These are parameters which control some of the finer details of the
 % calibration process. Not all of them are required, and a default value will
 % be used if not provided.
