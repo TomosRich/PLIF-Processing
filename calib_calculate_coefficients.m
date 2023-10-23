@@ -24,10 +24,7 @@ function calib_calculate_coefficients(directories, parameters, image_type, num_i
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022
+
 
     % Process for any unset parameters, and use default values for those
 
