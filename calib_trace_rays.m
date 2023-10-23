@@ -25,8 +25,10 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
     % MAT-files required: none
     % Other files required: none
     %
-    %   horizontal extrapolation controlled in lines 95 - 104
+    %   horizontal extrapolation controlled in lines 95 - 102
     %   radial extrapolation needs updating
+    %
+    %   lines 128 and 129 control how much radial interpolation is done if it is selected
 
     % TODO: we should construct this vector from given concentrations.
     % Choose dataset to look at and specify concentration
@@ -92,18 +94,27 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
         % upper then low limit -- near the wall is bad, for example.
         % and then to cut out a little box.
         % Extrapolate data to replace the near wall bad data
-        
-        % Next 4 lines are optional adding of horizontal limits
-        %xmin = -15;
-        %xmax = 280;
-        %dye_calib_frame( 1:max(find(X < xmin)),:) = NaN;
-        %dye_calib_frame( min(find(X > xmax)):end,:) = NaN;
-
+        xmin = 50; % 
+        xmax = 325; % 
+        dye_calib_frame( 1:max(find(X < xmin)),:) = NaN;
+        dye_calib_frame( min(find(X > xmax)):end,:) = NaN;
         dye_calib_frame = inpaintn(dye_calib_frame);
 
         dye_calib_frame(:, find(Y < y_extra, 1):end) = NaN;
         dye_calib_frame(:, 1:max(find(Y > y_high_end))) = NaN;
+        
 
+        
+        %dye_calib_frame(:, find(X < 275, 1):end) = NaN;
+        %dye_calib_frame(:, 1:max(find(X > 425))) = NaN;
+
+        % TODO: it is my understanding that this cut is optional
+        % next two lines here can be used to crop out sections of unusable
+        % calibration data, due to lights on tank and such, if you want to
+        % see where they are then set to a high number, not NaN, adjust to
+        % where they are needed
+        % dye_calib_frame(1:find(X > 110, 1), find(Y < 55, 1):find(Y < 35, 1)) = NaN;
+        % dye_calib_frame(find(X > 175, 1):end, find(Y < 37, 1):find(Y < 25, 1)) = NaN;
 
 
         % A round of polar interpolation first
@@ -114,12 +125,8 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
         if polar_interp
         theta_line_low = -atand((min(X)-origin_X)/(max(Y)-origin_Y));
         theta_line_high = -atand((max(X)-origin_X)/(max(Y)-origin_Y));
-        interpolation_r = 5; 
-        % Input of polar interpolation ratio, 1 means all polar, 4 means
-        % every 4th pixel is calculated polar
-        interpolation_theta = 5;
-        % the same ratio idea but with angles to calculate the rays, not
-        % distances along rays, 5 for each is pretty sensible usually
+        interpolation_r = 8; % Input of polar interpolation ratio, 1 means all polar
+        interpolation_theta = 8;
         theta_interp_step = (theta_line_high-theta_line_low)/((size(X,2)+size(Y,2))/2)*interpolation_theta;
         R_resolution = abs(min(Y(1)-Y(2), X(1)-X(2)))*interpolation_r;
 
@@ -130,9 +137,14 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
                 yi = origin_Y - R2 * cosd(theta);  % y coordinates of beam
                 [X3, Y3] = meshgrid(X, Y);  % reformatted x and y coordinates
                 
+
+                % TODO: there is a problem here with the code
                 ci = interp2(X3, Y3, dye_calib_frame', xi, yi);  % interpolating beam
                 P = polyfit(R2(~isnan(ci)), ci(~isnan(ci)), 1);  % fitting curve to beam interpolation
                 ci(isnan(ci)) = polyval(P, R2(isnan(ci)));  % replacing NaNs with curve points
+
+                % TODO: need to figure out what's going here, especially the last
+                % line of the loop
                 ylow = y_high_end;
                 yhigh = y_extra;
                 
@@ -167,27 +179,12 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
         end
 
         % use inpaintn function to fill in any missing data
-        % smoothing for ray streaks, this can be turned off if necessary
-        % this much smoothing is required only when resolution is high
+
         dye_calib_frame = inpaintn(dye_calib_frame);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,0.5);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,1);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,2);
+
         dye_calib_frame = imgaussfilt(dye_calib_frame,4);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,8);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,16);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,0.5);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,1);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,2);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,4);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,8);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,16);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,0.5);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,1);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,2);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,4);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,8);
-        dye_calib_frame = imgaussfilt(dye_calib_frame,16);
+
+        dye_calib_frame = imgaussfilt(dye_calib_frame,32);
         save(strcat(directories.folder_save, fsep, concentration_files{i}, 'X.mat'), 'dye_calib_frame', 'X', 'Y')
     end
 
