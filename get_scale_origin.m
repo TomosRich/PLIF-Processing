@@ -26,10 +26,7 @@ function [xy_scale, xy_offset] = get_scale_origin(calib_image, x_loc, y_loc)
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022 Creating for refactor/documentation purposes
+
 
     [~, ~, ext] = fileparts(calib_image);
     if strcmp(ext, '.im7') == true
@@ -43,8 +40,9 @@ function [xy_scale, xy_offset] = get_scale_origin(calib_image, x_loc, y_loc)
     hold on;
     axis equal tight;
 
-    % manually choose and extract scaling factor.
-    waitfor(msgbox(['Select two points at the corners of the calibration board followed by origin. Corresponding' ...
+    % manually choose and extract scaling factor, all origins should be the same if using multiple cameras
+    % origin does not have to be center of plate and should be chosen to leave zero near bottom of image
+    waitfor(msgbox(['Select two points on the calibration plate followed by origin. Corresponding' ...
                 ' real-world dimensions: x = ', num2str(x_loc), 'mm, y=', num2str(y_loc), 'mm']));
 
     [x, y] = ginput(3);
