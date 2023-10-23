@@ -5,6 +5,8 @@ function [parameters] = get_default_unset_parameters(parameters)
     % in the parameters struct. These values are historically set for experiments
     % at Southampton.
     %
+    % I am debating removing this as default parameters are so rarely useful ¯\_(ツ)_/¯
+    %
     % Syntax: parameters = get_default_unset_parameters(parameters)
     %
     % Inputs:
@@ -23,10 +25,6 @@ function [parameters] = get_default_unset_parameters(parameters)
     % MAT-files required: none
     % Other files required:  none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022     Created file and function
 
     if ~isfield(parameters, 'x_loc')
         parameters.x_loc = 110;
