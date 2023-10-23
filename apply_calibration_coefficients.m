@@ -25,11 +25,6 @@ function apply_calibration_coefficients(directories, parameters, image_type, run
     % Subfunctions: none
     % MAT-files required: none
     % Other files required: none
-    %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022
 
     if ~exist(directories.folder_save, 'dir')
         mkdir(directories.folder_save)
