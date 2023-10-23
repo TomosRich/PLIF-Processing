@@ -25,9 +25,7 @@ function calib_attenuation_summary_figures(directories, concentration_files, con
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Christina Vanderwel, D Hertwig, Desmond Lim, Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
+
 
     fsep = filesep;
 
