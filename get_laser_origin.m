@@ -25,10 +25,6 @@ function [origin_X, origin_Y, Amat, Bmat] = get_laser_origin(dye_calib_frame, X,
     % MAT-files required: none
     % Other files required: none
     %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
-    % Revisions:
-    %   Created E Parkinson 11 Aug 2022  Created to document better
 
     coeff = zeros(num_lines, 2);
 
