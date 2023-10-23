@@ -83,7 +83,7 @@ function [correlation] = f(directories, concentrations, epsilon)
     correlation = coef(1, 2);
 end
 
-% graph for debugging
+% graph to throw in command window for debugging
 %plot(concentration_list,mean_list,'-o')
 %title('Mean Intensity measured in Calibration Tanks vs Concentration');
 %xlabel('C')
