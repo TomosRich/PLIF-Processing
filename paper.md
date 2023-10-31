@@ -53,15 +53,17 @@ The functions in this package are designed to be run through a main function, in
 ![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
 $$
+\label{eq:flemit}
 E=aI(c-b)
 $$
 ![A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, I is the light intensity, c is the dye concentration, and b is the background intensity.]
 
-Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
+The equation given in /autoref{flemit} is used in the process described by /autoref{calexpl}. Conducting this full pixel by pixel calibration shown in allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
 
 
 $$
+\label{eq:bl}
 A=\varepsilon bc
 $$
 ![The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration]
@@ -70,12 +72,14 @@ $$
 In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in \autoref{calexpl}.
 
 $$
+\label{eq:blrea}
 A=I_{x}-I_{y}
 $$
 ![A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.]
 
 
 $$
+\label{eq:epsilon}
 I_{x}-I_{y} = \varepsilon bc
 $$
 ![A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration]
