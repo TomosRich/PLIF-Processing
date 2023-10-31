@@ -54,7 +54,7 @@ The functions in this package are designed to be run through a main function, in
 
 $$
 E=aI(c-b)
-[A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
+![A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, I is the light intensity, c is the dye concentration, and b is the background intensity.]
 $$
 
@@ -64,21 +64,21 @@ Conducting this full pixel by pixel calibration allows the constant (a) and the 
 
 $$
 A=\varepsilon bc
-[The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration]
+![The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration]
 $$
 
 
-In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in \ref{calexpl}.
+In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in \autoref{calexpl}.
 
 $$
 A=I_{x}-I_{y}
-[A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.]
+![A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.]
 $$
 
 
 $$
 I_{x}-I_{y} = \varepsilon bc
-[A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration]
+![A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration]
 $$
 
 
