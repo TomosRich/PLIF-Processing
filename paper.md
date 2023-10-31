@@ -52,13 +52,9 @@ The functions in this package are designed to be run through a main function, in
 
 ![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
-$$
-E=aI(c-b) \label{eq:flemit}
-$$
-$$
-A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
-constant, I is the light intensity, c is the dye concentration, and b is the background intensity.
-$$
+$$E=aI(c-b) \label{eq:flemit}$$
+$$A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
+constant, I is the light intensity, c is the dye concentration, and b is the background intensity.$$
 
 The equation given in \autoref{eq:flemit} is used in the process described by \autoref{calexpl}. Conducting this full pixel by pixel calibration shown in allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
 
