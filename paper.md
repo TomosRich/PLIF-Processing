@@ -53,8 +53,7 @@ The functions in this package are designed to be run through a main function, in
 ![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
 $$
-\label{eq:flemit}
-E=aI(c-b)
+E=aI(c-b) \label{eq:flemit}
 $$
 $$
 A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
@@ -68,6 +67,7 @@ $$
 \label{eq:bl}
 A=\varepsilon bc
 $$
+
 $$
 The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration.
 $$
