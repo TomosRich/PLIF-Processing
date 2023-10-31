@@ -50,13 +50,13 @@ The barrier to entry to use PLIF techniques is very high and consists of both th
 
 The functions in this package are designed to be run through a main function, in this package an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file, this calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in, along with a background subtraction. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. This code is designed in such a way that the create calibration and apply calibration sections can be run separately.
 
-![PLIF explanation image](PLIF_explanation.png)
+![PLIF explanation image](PLIF_explanation.png)\label{calexpl}
 
 $$
 E=aI(c-b)
 $$
-Equation for fluorescent emittance, where E is the emittance, a is a calibration
-constant, I is the light intensity, c is the dye concentration, and b is the background intensity.
+\caption{A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
+constant, I is the light intensity, c is the dye concentration, and b is the background intensity.}
 
 Conducting this full pixel by pixel calibration allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
 
@@ -64,22 +64,22 @@ Conducting this full pixel by pixel calibration allows the constant (a) and the 
 $$
 A=\varepsilon bc
 $$
-The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration
+\caption{The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration}
 
 
-In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in figure(1).
+In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in \ref{calexpl}.
 
 $$
 A=I_{x}-I_{y}
 $$
-A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.
+\caption{A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.}
 
 
 
 $$
 I_{x}-I_{y} = \varepsilon bc
 $$
-A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration
+\caption{A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration}
 
 
 This code is currently designed to take images of two calibration tanks in the path of the laser, the background flow, and a pixel to mm calibration target as input. These are used to calculate the gradient of a line through the tank intensities, and an offset to make this line go through zero.
