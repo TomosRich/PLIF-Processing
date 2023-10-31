@@ -53,10 +53,11 @@ The functions in this package are designed to be run through a main function, in
 ![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
 $$
-E=aI(c-b) \label{flemit}
+\label{flemit}
+E=aI(c-b)
 $$
 \begin{center}
-A customized caption formatEquation for fluorescent emittance, where E is the emittance, a is a calibration
+Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, I is the light intensity, c is the dye concentration, and b is the background intensity.
 \end{center}
 
