@@ -50,7 +50,7 @@ The barrier to entry to use PLIF techniques is very high and consists of both th
 
 The functions in this package are designed to be run through a main function, in this package an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file, this calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in, along with a background subtraction. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. This code is designed in such a way that the create calibration and apply calibration sections can be run separately.
 
-![PLIF explanation image](PLIF_explanation.png)\label{calexpl}
+![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
 $$
 E=aI(c-b)
