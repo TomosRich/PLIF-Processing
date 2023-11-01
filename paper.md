@@ -103,7 +103,7 @@ Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this sof
 Below is a list of all the function to be included in the package:
 
 
-\bf PLIF Calibration functions - calib\_calculate\_coefficients
+\bf \large PLIF Calibration functions - calib\_calculate\_coefficients
 \begin{enumerate}
 
     \item Average - calib\_average\_frames : A function to average the sets of images used for each calibration tank position.
@@ -151,7 +151,7 @@ Below is a list of all the function to be included in the package:
     
 \end{enumerate}
 
-\bf PLIF Processing Function - apply\_calibration\_coefficients
+\bf \large PLIF Processing Function - apply\_calibration\_coefficients
 \begin{enumerate}
     \item apply\_calibration\_coefficients: Applies calibration matrix to experimental images.
     
@@ -161,7 +161,7 @@ Below is a list of all the function to be included in the package:
     
 \end{enumerate}
 
-\bf Epsilon Optimisation Function
+\bf \large Epsilon Optimisation Function
 \begin{enumerate}
     \item Epsilon Iteration - epsilon\_correct\_attenuation : Uses bisection method to optimise absorptivity value for calibration images.
     
