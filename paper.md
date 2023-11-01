@@ -163,7 +163,8 @@ Below is a list of all the function to be included in the package:
     
 \end{enumerate}
 
-\bf \large Epsilon Optimisation Function
+\Large \bf{Epsilon Optimisation Function}
+\normalsize
 \begin{enumerate}
     \item Epsilon Iteration - epsilon\_correct\_attenuation : Uses bisection method to optimise absorptivity value for calibration images.
     
