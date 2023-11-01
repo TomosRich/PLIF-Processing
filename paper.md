@@ -103,7 +103,8 @@ Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this sof
 Below is a list of all the function to be included in the package:
 
 
-\bf \large PLIF Calibration functions - calib\_calculate\_coefficients
+\Large \bf{PLIF Calibration functions - calib\_calculate\_coefficients}
+\normalsize
 \begin{enumerate}
 
     \item Average - calib\_average\_frames : A function to average the sets of images used for each calibration tank position.
@@ -151,7 +152,8 @@ Below is a list of all the function to be included in the package:
     
 \end{enumerate}
 
-\bf \large PLIF Processing Function - apply\_calibration\_coefficients
+\Large \bf{PLIF Processing Function - apply\_calibration\_coefficients}
+\normalsize
 \begin{enumerate}
     \item apply\_calibration\_coefficients: Applies calibration matrix to experimental images.
     
@@ -172,7 +174,8 @@ Below is a list of all the function to be included in the package:
 \end{enumerate}
 
 
-\bf File Accessing Sub-functions
+\Large \bf{File Accessing Sub-functions}
+\normalsize
 \begin{enumerate}
 
      \item get\_scale\_origin: Uses an image of the calibration plate to apply a user defined origin to all images.
