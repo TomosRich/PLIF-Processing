@@ -11,12 +11,6 @@ authors:
     orcid: 0000-0002-6259-4225
     
     affiliation: 1
-    
-
-  - name: E. Parkinson
-    orcid: 0000-0002-6259-4225
-    
-    affiliation: 1
 
   - name: C. Vanderwel
     orcid: 0000-0002-6259-4225
@@ -37,7 +31,7 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 
 # Summary
 
-Planar laser induced fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. It is a far less extensively researched method than particle image velocimetry (PIV) and due to this it can be hard to find existing codes to carry it out. Calculating the concentration of a flow using a camera requires a multiple step calibration, and a set of highly specific calibration images. These calibration images give information on both the pixel to mm scale, and on the fluorescent intensity to concentration of dye scale.
+Planar laser induced fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow, this paper and code are specifically designed with the aqueous version of this technique in mind. PLIF is a far less extensively used method than particle image velocimetry (PIV) and due to this it can be hard to find existing codes to carry it out. Calculating the concentration of a flow using a camera requires a multiple step calibration, and a set of highly specific calibration images. These calibration images give information on both the pixel to mm scale, and on the fluorescent intensity to concentration of dye scale.
 Biases can be introduced through multiple sources to the aqueous PLIF technique. This code package is designed to allow the user to account for these biases using tuneable parameters, or calculations of variable values based on experimental and concentration images.
 
 # Statement of need
@@ -49,7 +43,7 @@ The uses of experimental concentration measurements in a fluid flow are extensiv
 
 ![A diagram of a PLIf experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
-The barrier to entry to use PLIF techniques is very high and consists of both the highly specialised equipment necessary, and also the processing software and expertise to interpret results. The release of this software package as open source coding tools will hopefully reduce one of these barriers within the academic community. It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible, the same is true of a specialised PLIF camera with a high pixel depth. PLIF can be carried out in air but is far easier in water, and having a water tunnel or flume is less common than having a wind tunnel in aerospace labs, so this provides another barrier to entry. Nevertheless, for groups that have the tools to carry out particle image velocimetry in a water facility, the only piece of equipment that is 100% vital to carry out PLIF is a high pass camera filter to block the direct laser light from the camera lens.
+In order to carry out a PLIF investigation it is necessary to have a large amount of specialised equipment, see \autoref{diagramexpl}, and also to have a complex post processing code along with the expertise to use it. The release of this software package as an open source coding tool will hopefully reduce one of these barriers within the academic community. It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible, the same is true of a specialised PLIF camera with a high pixel depth. PLIF can be carried out in air but is far easier in water, and having a water tunnel or flume is less common than having a wind tunnel in aerospace labs, so this provides another barrier to entry. The high pass filter shown in \autoref{diagramexpl} is necessary in order to eliminate the camera's ability to directly measure the laser light, without taking this step the assumptions PLIF is based on are not valid.
 
 # Package Overview
 
@@ -57,28 +51,32 @@ The functions in this package are designed to be run through a main function, in
 
 ![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
 
+\autoref{calexpl} shows the process of a PLIF calibration in diagram form, with example inputs and outputs from an experimental campaign carried out at the University of Southampton.
+The equation for fluorescent emittance,
+
 $$
 \label{flemit}
-E=aI(c-b)
+E=aI(C-b)
 $$
 \begin{center}
 Equation for fluorescent emittance, where E is the emittance, a is a calibration
-constant, I is the light intensity, c is the dye concentration, and b is the background intensity.
+constant, I is the light intensity, C is the dye concentration, and b is the background intensity.
 \end{center}
 
-The equation for fluorescent emittance, given above, is used in the process described by \autoref{calexpl}. Conducting this full pixel by pixel calibration shown in allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (c) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
+is used in the process described by \autoref{calexpl}. Conducting this full pixel by pixel calibration shown in allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (C) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
 
+
+This code is currently designed to take images of two calibration tanks in the path of the laser, the background flow, and a pixel to mm calibration target as input. These are used to calculate the gradient of a line through the tank intensities, and an offset to make this line go through zero. In order to know an accurate value of the light intensity (\(i\)) at each pixel for the experimental case, through the use of calibration images, the attenuation through the calibration tank must be accounted for. This is done using the Beer-Lambert law. 
 
 $$
 \label{bl}
-A=\varepsilon bc
+A=\varepsilon bC
 $$
 \begin{center}
-The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and c is concentration.
+The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and C is concentration.
 \end{center}
 
-
-In order to know the light intensity (\(i\)) at each pixel, using calibration images, the attenuation through the calibration tank used, must be accounted for, this is done using the Beer-Lambert law. This is done in an optional repeating loop of the bottom row in \autoref{calexpl}.
+In the case of a calibration image the concentration (C) and ($\varepsilon$) are constant, and b is constant but has a different value at each pixel. The definition of absorbance (A) can be used
 
 $$
 \label{blrea}
@@ -88,19 +86,17 @@ $$
 A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.
 \end{center}
 
+to obtain another equation referring to absorbance in terms of light intensity. These two can be rearranged to obtain an equation in which ($\varepsilon$) is the only unknown. 
 
 $$
 \label{epsilon_eq}
-I_{x}-I_{y} = \varepsilon bc
+I_{x}-I_{y} = \varepsilon bC
 $$
 \begin{center}
 A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration.
 \end{center}
 
-
-This code is currently designed to take images of two calibration tanks in the path of the laser, the background flow, and a pixel to mm calibration target as input. These are used to calculate the gradient of a line through the tank intensities, and an offset to make this line go through zero.
-
-Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this software package includes a package of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional.
+This equation can be solved at each pixel of each calibration image in order to create an image analagous to each row of pixels being illuminated as if they were the top row closest to the laser, along the path of laser streaks. This removes the problem of increased attenuation during the calibration process relative to experiments. This method is dependent on having an accurate estimate of the absoprtivity ($\varepsilon$) Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this software package includes a package of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional. This would be represented in \autoref{calexpl} by an optional repeating loop of the bottom row, in which the calibration image is generated. This loop runs until the light intensity ratios measured from the calibration tanks match the ratios of dye concentrations within them, and it can be configured to prioritize a specific region for optimization.
 
 
 # Package Functions
@@ -108,10 +104,12 @@ Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this sof
 Below is a list of all the function to be included in the package:
 
 
-\Large \bf{PLIF Calibration functions - calib\_calculate\_coefficients}
+\Large \bf{PLIF Calibration functions - }
 \normalsize
 \begin{enumerate}
 
+    \item Average - calib\_calculate\_coefficients : Parent function that calls other calibration functions.
+    
     \item Average - calib\_average\_frames : A function to average the sets of images used for each calibration tank position.
     
     Input: 7 sets of images
