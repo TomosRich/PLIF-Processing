@@ -39,7 +39,7 @@ Biases can be introduced through multiple sources to the aqueous PLIF technique.
 This PLIF calibration package is a set of MATLAB tools that enable the user to write functions to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to create known intensity values.  Attention was drawn (Vanderwel 2014)(Crimaldi 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias that is not present to the same degree in experimental images. This bias being the higher level of attenuation along laser rays present in the dye tanks than in the free stream of the experiment. If not corrected for then this biases the calibration to be more sensitive to dye near the laser sheet source. This problem was addressed by (Baj 2016) in a novel way using the traversal of a narrow tank, however it is possible account for this problem more simply through the calculation of absorptivity ($\varepsilon$). 
 This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. The expected use case of this package is in academic research.
 
-The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data with low uncertainties is particularly important in cases in which turbulent mixing is substantial. This is due to the uncertainties present in modelling sub-grid turbulence interacting with dispersion; when conducting simulations with less fidelity than direct numerical simulation. Point measurements using detectors like fast flame ionisation devices are useful for the high time resolution they offer (Fellini 2022), however when attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
+The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data with low uncertainties is particularly important in cases in which turbulent mixing is substantial. This is due to the uncertainties present in modelling sub-grid turbulence interacting with dispersion; when conducting simulations with less fidelity than direct numerical simulation. When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
 
 ![A diagram of a PLIf experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
@@ -49,7 +49,7 @@ In order to carry out a PLIF investigation it is necessary to have a large amoun
 
 The functions in this package are designed to be run through a main function, in this package an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file, this calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in, along with a background subtraction. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. This code is designed in such a way that the create calibration and apply calibration sections can be run separately.
 
-![PLIF explanation image \label{calexpl}](PLIF_explanation.png) 
+![A diagram of PLIF post proccesing as carried out by this code package. \label{calexpl}](PLIF_explanation.png) 
 
 \autoref{calexpl} shows the process of a PLIF calibration in diagram form, with example inputs and outputs from an experimental campaign carried out at the University of Southampton.
 The equation for fluorescent emittance,
@@ -59,8 +59,10 @@ $$
 E=aI(C-b)
 $$
 \begin{center}
+\scriptsize
 Equation for fluorescent emittance, where E is the emittance, a is a calibration
 constant, I is the light intensity, C is the dye concentration, and b is the background intensity.
+\normalsize
 \end{center}
 
 is used in the process described by \autoref{calexpl}. Conducting this full pixel by pixel calibration shown in allows the constant (a) and the light intensity (i) to be accounted for, so that the concentration (C) can be quantitatively calculated using the emittance (E). In the code the first step here is the background subtraction removing b. The calibration image is then generated from the gradient of the line of pixel intensity against dye concentration, in the equation for fluorescent emittance it is equivalent to a pixel by pixel value of $1/aI$. After this step the raw image has been transformed from an array of pixels representing measured fluorescent emittance, to one representing scalar concentration.
@@ -73,7 +75,9 @@ $$
 A=\varepsilon bC
 $$
 \begin{center}
+\scriptsize
 The Beer-Lambert law, where A is absorbance, $\varepsilon$ is absorptivity, b is path length, and C is concentration.
+\normalsize
 \end{center}
 
 In the case of a calibration image the concentration (C) and ($\varepsilon$) are constant, and b is constant but has a different value at each pixel. The definition of absorbance (A) can be used
@@ -83,7 +87,9 @@ $$
 A=I_{x}-I_{y}
 $$
 \begin{center}
+\scriptsize
 A is equal to Absorbance, $I_{x}$ is light intensity at x, and $I_{y}$ is light intensity at y.
+\normalsize
 \end{center}
 
 to obtain another equation referring to absorbance in terms of light intensity. These two can be rearranged to obtain an equation in which ($\varepsilon$) is the only unknown. 
@@ -93,7 +99,9 @@ $$
 I_{x}-I_{y} = \varepsilon bC
 $$
 \begin{center}
+\scriptsize
 A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration.
+\normalsize
 \end{center}
 
 This equation can be solved at each pixel of each calibration image in order to create an image analagous to each row of pixels being illuminated as if they were the top row closest to the laser, along the path of laser streaks. This removes the problem of increased attenuation during the calibration process relative to experiments. This method is dependent on having an accurate estimate of the absoprtivity ($\varepsilon$) Methods to calculate the absorptivity $\varepsilon$ of a solution vary, this software package includes a package of code to iteratively calculate this from the calibration images. This process mostly uses the existing code and is designed to be optional. This would be represented in \autoref{calexpl} by an optional repeating loop of the bottom row, in which the calibration image is generated. This loop runs until the light intensity ratios measured from the calibration tanks match the ratios of dye concentrations within them, and it can be configured to prioritize a specific region for optimization.
@@ -212,7 +220,7 @@ Below is a list of all the function to be included in the package:
 
     Output: Unset parameters.
 
-    \item get\_background\_intensity: Uses a selction of the freestream of the flow with no scalar to estimate the intensity of the background, relative to the original before the experiment began.
+    \item get\_background\_intensity: Uses a selection of the freestream of the flow with no scalar to estimate the intensity of the background, relative to the original before the experiment began.
     
     Input: Experiment Image, Freestream location.
     
@@ -220,6 +228,9 @@ Below is a list of all the function to be included in the package:
 
 \end{enumerate}
 
+# Acknowledgements and Author Contribution Statement
+
+The contributions of Dr Edward Parkinson, Dr Desmond Lim, and Dr Christina Vanderwel to this code package are acknowledged. Dr Parkinson for his reformatting of this code into a modular form with more consistency across functions. Dr Lim for his work on the previous code base that this expanded version was built from. The funding provided to Dr Vanderwel by the UKRI is also acknowledged.
 
 # References
 <div class="csl-entry">Crimaldi, J. P. (2008). Planar laser induced fluorescence in aqueous flows. <i>Experiments in Fluids</i>, <i>44</i>(6), 851–863. https://doi.org/10.1007/s00348-008-0496-2</div>
