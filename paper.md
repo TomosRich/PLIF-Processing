@@ -40,13 +40,18 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 Planar laser induced fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. It is a far less extensively researched method than particle image velocimetry (PIV) and due to this it can be hard to find existing codes to carry it out. Calculating the concentration of a flow using a camera requires a multiple step calibration, and a set of highly specific calibration images. These calibration images give information on both the pixel to mm scale, and on the fluorescent intensity to concentration of dye scale.
 Biases can be introduced through multiple sources to the aqueous PLIF technique. This code package is designed to allow the user to account for these biases using tuneable parameters, or calculations of variable values based on experimental and concentration images.
 
+# Statement of need
+
 This PLIF calibration package is a set of MATLAB tools that enable the user to write functions to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to create known intensity values.  Attention was drawn (Vanderwel 2014)(Crimaldi 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias that is not present to the same degree in experimental images. This bias being the higher level of attenuation along laser rays present in the dye tanks than in the free stream of the experiment. If not corrected for then this biases the calibration to be more sensitive to dye near the laser sheet source. This problem was addressed by (Baj 2016) in a novel way using the traversal of a narrow tank, however it is possible account for this problem more simply through the calculation of absorptivity ($\varepsilon$). 
 This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. The expected use case of this package is in academic research.
 
-# Statement of need
-
 The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data with low uncertainties is particularly important in cases in which turbulent mixing is substantial. This is due to the uncertainties present in modelling sub-grid turbulence interacting with dispersion; when conducting simulations with less fidelity than direct numerical simulation. Point measurements using detectors like fast flame ionisation devices are useful for the high time resolution they offer (Fellini 2022), however when attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
+
+![A diagram of a PLIf experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
+
 The barrier to entry to use PLIF techniques is very high and consists of both the highly specialised equipment necessary, and also the processing software and expertise to interpret results. The release of this software package as open source coding tools will hopefully reduce one of these barriers within the academic community. It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible, the same is true of a specialised PLIF camera with a high pixel depth. PLIF can be carried out in air but is far easier in water, and having a water tunnel or flume is less common than having a wind tunnel in aerospace labs, so this provides another barrier to entry. Nevertheless, for groups that have the tools to carry out particle image velocimetry in a water facility, the only piece of equipment that is 100% vital to carry out PLIF is a high pass camera filter to block the direct laser light from the camera lens.
+
+# Package Overview
 
 The functions in this package are designed to be run through a main function, in this package an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file, this calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in, along with a background subtraction. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. This code is designed in such a way that the create calibration and apply calibration sections can be run separately.
 
@@ -163,7 +168,7 @@ Below is a list of all the function to be included in the package:
     
 \end{enumerate}
 
-\Large \bf{Epsilon Optimisation Function}
+\Large \bf{Epsilon Optimisation Function (Optional)}
 \normalsize
 \begin{enumerate}
     \item Epsilon Iteration - epsilon\_correct\_attenuation : Uses bisection method to optimise absorptivity value for calibration images.
