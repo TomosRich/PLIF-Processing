@@ -35,7 +35,7 @@ Planar laser induced fluorescence (PLIF) is a technique used to quantitatively m
 
 # Statement of need
 
-The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (Lim2022)(Karra2017), and in the study of turbulent jets (Milton-McGurk2020). PLIF measurements have also been taken across various forms of roughness (ref), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
+The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (Lim2022)(Karra2017), and in the study of turbulent jets (Milton-McGurk2020). PLIF measurements have also been taken across various forms of roughness (Djenidi2008), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
 
 ![A diagram of a PLIF experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
@@ -240,3 +240,5 @@ The contributions of Dr Edward Parkinson, Dr Desmond Lim, and Dr Christina Vande
 <div class="csl-entry">Karra, S., Malki-Epshtein, L., &#38; Neophytou, M. K. A. (2017). Air flow and pollution in a real, heterogeneous urban street canyon: A field and laboratory study. <i>Atmospheric Environment</i>, <i>165</i>, 370–384. https://doi.org/10.1016/J.ATMOSENV.2017.06.035</div>
 
 <div class="csl-entry">Milton-McGurk, L., Williamson, N., Armfield, S. W., &#38; Kirkpatrick, M. P. (2020). Experimental investigation into turbulent negatively buoyant jets using combined PIV and PLIF measurements. <i>International Journal of Heat and Fluid Flow</i>, <i>82</i>. https://doi.org/10.1016/j.ijheatfluidflow.2020.108561</div>
+
+<div class="csl-entry">Djenidi, L., Antonia, R. A., Amielh, M., &#38; Anselmet, F. (2008). A turbulent boundary layer over a two-dimensional rough wall. <i>Experiments in Fluids</i>, <i>44</i>(1), 37–47. https://doi.org/10.1007/s00348-007-0372-5</div>
