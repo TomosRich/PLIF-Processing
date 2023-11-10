@@ -35,7 +35,7 @@ Planar laser induced fluorescence (PLIF) is a technique used to quantitatively m
 
 # Statement of need
 
-The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (ref ref), and in the study of turbulent jets (\cite(Lim2022) ref). PLIF measurements have also been taken across various forms of roughness (ref), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
+The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (ref ref), and in the study of turbulent jets (\ref(Lim2022) ref). PLIF measurements have also been taken across various forms of roughness (ref), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
 
 ![A diagram of a PLIF experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
