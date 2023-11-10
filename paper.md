@@ -31,8 +31,7 @@ aas-journal: Astrophysical Journal <- The name of the AAS journal.
 
 # Summary
 
-Planar laser induced fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow, this paper and code are specifically designed with the aqueous version of this technique in mind. PLIF is a far less extensively used method than particle image velocimetry (PIV) and due to this it can be hard to find existing codes to carry it out. Calculating the concentration of a flow using a camera requires a multiple step calibration, and a set of highly specific calibration images. These calibration images give information on both the pixel to mm scale, and on the fluorescent intensity to concentration of dye scale.
-Biases can be introduced through multiple sources to the aqueous PLIF technique. This code package is designed to allow the user to account for these biases using tuneable parameters, or calculations of variable values based on experimental and concentration images.
+Planar laser induced fluorescence (PLIF) is a technique used to quantitatively measure the concentration of a fluorescent species in a flow. This paper and code are specifically designed for aqueous applications in which a fluorescent dye is illuminated by a planar laser sheet. A camera measures the intensity of fluorescence, which this code uses to calculate the concentration of dye. A multiple step calibration is required using a set of specific calibration images. This process calibrates both the physical (pixel to mm) scale and the transfer function from measured fluorescent intensity to the local dye concentration. Biases can be introduced from background dye build-up or laser attenuation. This code package is designed to allow the user to account for these biases using tuneable parameters based on experimental measurements and additional calibration images.
 
 # Statement of need
 
