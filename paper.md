@@ -35,7 +35,7 @@ Planar laser induced fluorescence (PLIF) is a technique used to quantitatively m
 
 # Statement of need
 
-The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (ref ref), and in the study of turbulent jets (<div class="csl-entry">Lim, H. D., Hertwig, D., Grylls, T., Gough, H., Reeuwijk, M. van, Grimmond, S., &#38; Vanderwel, C. (2022). Pollutant dispersion by tall buildings: laboratory experiments and Large-Eddy Simulation. <i>Experiments in Fluids</i>, <i>63</i>(6). https://doi.org/10.1007/s00348-022-03439-0</div> ref). PLIF measurements have also been taken across various forms of roughness (ref), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
+The uses of experimental concentration measurements in a fluid flow are extensive. Being able to acquire accurate experimental data has proven useful in the study of urban flows (ref ref), and in the study of turbulent jets (\cite(Lim2022) ref). PLIF measurements have also been taken across various forms of roughness (ref), and within boundary layers (ref). When attempting to map dispersion in an entire flow it is valuable to capture dispersive data in entire planes. 
 
 ![A diagram of a PLIF experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
@@ -234,5 +234,7 @@ The contributions of Dr Edward Parkinson, Dr Desmond Lim, and Dr Christina Vande
 <div class="csl-entry">Vanderwel, C., &#38; Tavoularis, S. (2014). On the accuracy of PLIF measurements in slender plumes. <i>Experiments in Fluids</i>, <i>55</i>(8). https://doi.org/10.1007/s00348-014-1801-x</div>
 
 <div class="csl-entry">Baj, P., Bruce, P. J. K., &#38; Buxton, O. R. H. (2016). On a PLIF quantification methodology in a nonlinear dye response regime. <i>Experiments in Fluids</i>, <i>57</i>(6), 1–19. https://doi.org/10.1007/s00348-016-2190-0</div>
+
+<div class="csl-entry">Lim, H. D., Hertwig, D., Grylls, T., Gough, H., Reeuwijk, M. van, Grimmond, S., &#38; Vanderwel, C. (2022). Pollutant dispersion by tall buildings: laboratory experiments and Large-Eddy Simulation. <i>Experiments in Fluids</i>, <i>63</i>(6). https://doi.org/10.1007/s00348-022-03439-0</div>
 
 
