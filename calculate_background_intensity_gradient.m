@@ -21,9 +21,6 @@ function calculate_background_intensity_gradient(directories, image_type, num_im
     % Subfunctions: none
     % MAT-files required: none
     % Other files required: none
-    %
-    % Authors: Dr Edward Parkinson
-    % University of Southampton
 
     % Load in the background intensity image, to get the size of the frame
     fsep = filesep;
