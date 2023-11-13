@@ -67,7 +67,7 @@ function calib_make_final_frame(directories, concentrations, epsilon)
     subplot(2, 2, 1);
     imagesc(X, Y, (A_cal.*A_frame1)');
     colorbar;
-    caxis([0 0.05]);
+    caxis([0 0.06]);
     set(gca, 'YDir', 'normal');
     title('Tank 1');
     axis equal tight;
@@ -76,7 +76,7 @@ function calib_make_final_frame(directories, concentrations, epsilon)
     subplot(2, 2, 2);
     imagesc(X, Y, (A_cal.*A_frame2)');
     colorbar;
-    caxis([0 0.05]);
+    caxis([0 0.06]);
     set(gca, 'YDir', 'normal');
     title('Tank 2');
     axis equal tight;
