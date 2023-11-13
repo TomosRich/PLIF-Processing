@@ -39,9 +39,9 @@ The uses of experimental concentration measurements in a fluid flow are extensiv
 
 ![A diagram of a PLIF experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
-In order to carry out a PLIF investigation it is necessary to have a large amount of specialised equipment (see \autoref{diagramexpl}) and also to have a complex post processing code along with the expertise to use it.  It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible. The same is true of a specialised PLIF camera with a high pixel depth. PLIF can be carried out in air but is far easier in water, therefore having a water-based experimental facility is another barrier to entry. It is hoped that by releasing this software package as an open source tool, a lack of available code will stop being one of the barriers to entry to carry out PLIF.
+In order to carry out a PLIF investigation it is necessary to have a large amount of specialised equipment (see \autoref{diagramexpl}) and also to have a complex post processing code along with the expertise to use it.  It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible. The same is true of a specialised PLIF camera with a high pixel depth. PLIF can be carried out in air but is far easier in water, therefore having a water-based experimental facility is another barrier to entry. It is hoped that by releasing this software package as an open source tool, lack of available code will be removed as one of these barriers to entry to carry out PLIF.
 
-This PLIF calibration package is a set of MATLAB tools that enable the user to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to create known intensity values. Attention was drawn (Vanderwel 2014)(Crimaldi 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias that is not present to the same degree in experimental images. This bias being the higher level of attenuation along laser rays present in the dye tanks than in the free stream of the experiment. If not corrected for then this biases the experiment to be more sensitive to dye near the laser sheet source. This problem was addressed by (Baj 2016) in a novel way using the traversal of a narrow tank, however it is possible account for this problem more simply through the calculation of absorptivity ($\varepsilon$). This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. The expected use case of this package is in academic research.
+This PLIF calibration package is a set of MATLAB tools that enable the user to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to create known intensity values. Attention was drawn (Vanderwel 2014)(Crimaldi 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias that is not present to the same degree in experimental images. This bias being the higher level of attenuation along laser rays present in the dye tanks than happens in the free stream of the experiment. If not corrected for then this biases the experiment to be more sensitive to dye near the laser sheet source. This problem was addressed by (Baj 2016) in a novel way using the traversal of a narrow tank, however it is possible to account for this problem more simply through the calculation of absorptivity ($\varepsilon$). This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. The expected use case of this package is in academic research.
 
 # Package Overview
 
@@ -91,11 +91,11 @@ to obtain another equation referring to absorbance in terms of light intensity. 
 
 $$
 \label{epsilon_eq}
-I_{x}-I_{y} = \varepsilon bC
+I_{x}-I_{y} = \varepsilon rC
 $$
 \begin{center}
 \scriptsize
-A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, b is path length between a and b, and c is concentration.
+A rearrangement of the Beer Lambert law. $I_{x}$ is light intensity at x, $I_{y}$ is light intensity at y, $\varepsilon$ is absorptivity, r is path length between a and b, and c is concentration.
 \normalsize
 \end{center}
 
@@ -104,7 +104,7 @@ This equation can be solved at each pixel of each calibration image in order to 
 
 # Package Functions
 
-Below is a list of all the function to be included in the package:
+Below is a list of all the functions included in the package:
 
 
 \Large \bf{PLIF Calibration functions - }
