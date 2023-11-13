@@ -31,12 +31,12 @@ function [background_intensity] = get_background_intensity(i, image_folder, imag
     ny = size(image, 2);
 
     % aim E at the freestream to get sensible values
-    E = image(int16(3 * (nx / 8)):int16(5 * (nx / 8)), int16(1 * (ny / 8)):int16(2 * (ny / 8)));
+    E = image(int16(3 * (nx / 8)):int16(5 * (nx / 8)), int16(1 * (ny / 8)):int16(2 * (ny / 8))); % grab a little chunk of background to judge the background intensity
     background_intensity = mean(E, 'all');
 
 end
 
-% this section is useful to check where youre aiming E in line 37 :), it should be a freestream section in which no dye is present
+% this section(below) is useful to check where youre aiming E in line 37 :), it should be a freestream section in which no dye is present
 
 %image(int16(4 * (nx / 8)):int16(7 * (nx / 8)), int16(1 * (ny/8)):int16(2 * (ny / 8))) = image(int16(4 * (nx / 8)):int16(7 * (nx /8)), int16(1 * (ny / 8)):int16(2 * (ny / 8)))*2;
 %imagesc(image)
