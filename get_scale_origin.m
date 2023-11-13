@@ -42,6 +42,8 @@ function [xy_scale, xy_offset] = get_scale_origin(calib_image, x_loc, y_loc)
 
     % manually choose and extract scaling factor, all origins should be the same if using multiple cameras
     % origin does not have to be center of plate and should be chosen to leave zero near bottom of image
+    % this is important as attenuation is calculated between this zero and the tank height
+    % however zero offset can move zero below origin to get it to the bottom of the screen
     waitfor(msgbox(['Select two points on the calibration plate followed by origin. Corresponding' ...
                 ' real-world dimensions: x = ', num2str(x_loc), 'mm, y=', num2str(y_loc), 'mm']));
 
