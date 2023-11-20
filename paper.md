@@ -45,7 +45,7 @@ This PLIF calibration package is a set of MATLAB tools that enable the user to p
 
 # Package Overview
 
-The functions in this package are designed to be run through a main function. In this package, an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file. This calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. The background subtraction represents a zero offset for this gradient, and is subtracted before the scale is applied. The $calculate calibration$ and $apply calibration$ sections of this code are designed to be independently executable.
+The functions in this package are designed to be run through a main function. In this package, an example of a main function is included (example.m). The functions are designed to generate a calibration matrix and save that to a file. This calibration matrix is an array of multipliers that correspond to each pixel in an image and are later multiplied in. These multipliers represent the gradient between measured intensity and dye concentration at each point in the flow. The background subtraction represents a zero offset for this gradient, and is subtracted before the scale is applied. The \textit{calculate calibration} and \textit{apply calibration} sections of this code are designed to be independently executable.
 
 ![A diagram of PLIF post proccesing as carried out by this code package. \label{calexpl}](PLIF_explanation.png) 
 
