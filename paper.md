@@ -35,13 +35,13 @@ Planar laser induced fluorescence (PLIF) is a technique used to quantitatively m
 
 # Statement of need
 
-The applications of experimental concentration measurements in a fluid flow are extensive. Some examples include urban flows (Lim et al,.2022; Karra et al,.2017), turbulent jets (Milton-McGurk et al,.2020), dispersion over roughness (Djenidi et a,.2008), and dispersion within boundary layers (Tomas et a,.2017). When attempting to map these varied experimental cases it is valuable to be able to measure dispersion across full planes, as opposed to using point measurements. 
+The applications of experimental concentration measurements in a fluid flow are extensive. Some examples include urban flows (Lim et al,.2022; Karra et al,.2017), turbulent jets (Milton-McGurk et al,.2020), dispersion over roughness (Djenidi et al,.2008), and dispersion within boundary layers (Tomas et al,.2017). When attempting to map these varied experimental cases it is valuable to be able to measure dispersion across full planes, as opposed to using point measurements. 
 
 ![A diagram of a PLIF experimental setup. \label{diagramexpl}](PLIF_diagram.png) 
 
-In order to carry out a PLIF investigation it is necessary to have a large amount of specialised equipment (see \autoref{diagramexpl}) and also to have a complex post processing code along with the expertise to use it.  It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible. The same is true of a specialised PLIF camera with a high pixel depth. The form of PLIF that this code is designed for is known as aqueous PLIF, and this is the form that is typically used for non-reactive flows. Having a water-based experimental facility is a significant barrier to entry to carrying out aqueous PLIF. It is hoped that by releasing this software package as an open source tool, lack of post-processing software will be removed as one of these many barriers to entry.
+In order to carry out a PLIF investigation it is necessary to have a large amount of specialised equipment (see \autoref{diagramexpl}) and also to have a complex post processing code along with the expertise to use it.  It is possible to run a PLIF investigation without all of the tools recommended to reduce uncertainty. For example a laser energy monitor can be disregarded; uncertainty will rise but PLIF is still possible. The same is true of a specialised PLIF camera with a high pixel depth. This code is designed for use with aqueous PLIF, as this is the type of PLIF that uses calibration tanks. Having a water-based experimental facility can be a significant barrier to entry to carrying out aqueous PLIF. It is hoped that by releasing this software package as an open source tool, lack of post-processing software will be removed as one of these many barriers to entry.
 
-This PLIF calibration package is a set of MATLAB tools that enable the user to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to record image intensity values that relate to known concentration values. Attention was drawn (Vanderwel et al,.2014; Crimaldi,. 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias that is not present to the same degree in experimental images. This bias being the higher level of attenuation along laser rays present in the dye tanks than happens in the free stream of the experiment. If not corrected for then this biases the experiment to be more sensitive to dye near the laser sheet source. This problem was addressed by (Baj et a,.2016) in a novel way using the traversal of a narrow tank, however it is possible to account for this problem more simply through the calculation of absorptivity ($\varepsilon$). This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. This package is primarily intended for academic research use.
+This PLIF calibration package is a set of MATLAB tools that enable the user to process PLIF datasets. Concentration calibration images are images in which a tank of dye of a known concentration is introduced into the experimental setup, in order to record image intensity values that relate to known concentration values. Attention was drawn (Vanderwel et al,.2014; Crimaldi,. 2008) to the necessity to correct concentration calibration images, as they themselves can create a bias due to attenuation diminishing the laser intensity as the laser rays pass through the calibration tanks. This bias is not present to as high a degree in the experimental images and so attenuation corrections are focused on the calibration process. If not corrected for then this biases the experiment to be more sensitive to dye near the laser sheet source. This problem was addressed by Baj et al,.2016 in a novel way using the traversal of a narrow tank, however it is possible to account for this problem more simply through the calculation of absorptivity ($\varepsilon$). This software package provides checks along the processing steps that it is working as intended in the form of graphs and images of the calibration steps. This package is primarily intended for academic research use.
 
 # Package Overview
 
@@ -107,11 +107,11 @@ This equation can be solved at each pixel of each calibration image in order to 
 Below is a list of all the functions included in the package:
 
 
-\Large \bf{PLIF Calibration functions - }
+\Large \bf{PLIF Calibration functions - Calculate Calibration}
 \normalsize
 \begin{enumerate}
 
-    \item Average - calib\_calculate\_coefficients : Parent function that calls other calibration functions.
+    \item Parent function - calib\_calculate\_coefficients : Parent function that calls other calibration functions.
     
     \item Average - calib\_average\_frames : A function to average the sets of images used for each calibration tank position.
     
@@ -158,7 +158,7 @@ Below is a list of all the functions included in the package:
     
 \end{enumerate}
 
-\Large \bf{PLIF Processing Function - apply\_calibration\_coefficients}
+\Large \bf{PLIF Processing Function - Apply Calibration}
 \normalsize
 \begin{enumerate}
     \item apply\_calibration\_coefficients: Applies calibration matrix to experimental images.
@@ -225,7 +225,7 @@ Below is a list of all the functions included in the package:
 
 # Acknowledgements and Author Contribution Statement
 
-The contributions of Dr Edward Parkinson, Dr Desmond Lim, and Dr Christina Vanderwel to this code package are acknowledged. Dr Parkinson for his reformatting of this code into a modular form with more consistency across functions. Dr Lim for his work on the previous code base that this expanded version was built from. The funding provided to Dr Vanderwel by the UKRI is also acknowledged.
+The contributions of Dr Edward Parkinson, Dr Desmond Lim, and Dr Christina Vanderwel to this code package are acknowledged. Dr Parkinson for his reformatting of this code into a modular form with more consistency across functions. Dr Lim for his work on the previous code base that this expanded version was built from. The funding provided to Dr Vanderwel through her UKRI Future Leaders Fellowship (MR/S015566/1) is also gratefully acknowledged.
 
 # References
 <div class="csl-entry">Crimaldi, J. P. (2008). Planar laser induced fluorescence in aqueous flows. <i>Experiments in Fluids</i>, <i>44</i>(6), 851–863. https://doi.org/10.1007/s00348-008-0496-2</div>
