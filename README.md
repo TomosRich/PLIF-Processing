@@ -13,7 +13,10 @@ Creating a calibration requires images in which dye of known concentrations is f
 It also requires a background image of the area with no dye present, and a calibration image that a length scale can be calculated from (eg an image of a calibration plate).
 User input is required at several steps but only the initial time the code is run, if you want to reset the user input then go into your output folder and delete the geometric_scale.mat, and origin_XY.mat files.
 
-If visual artifacts remain in calibration images after averaging then areas can be selected for basic interpolation in calib_trace_rays.
+If visual artifacts remain in calibration images then adjusting the interpolation area is advised.
+Interpolation area is defined as everything outside parameters.y_extra - parameters.y_high_end in the y direction.
+X limits for interpolation are defined on lines 97-98 of calib_trace_rays.m.
+As of 05/06/2024 polar interpolation is advised for most cases.
 All attenuation correction is carried out between y = 0 and y = tank height. It is advised to set a y offset such that y = 0  is at the bottom of the calibration tank, even if this is outside the camera field of view.
 
 Good luck, PLIF is a finicky science :)

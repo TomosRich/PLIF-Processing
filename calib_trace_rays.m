@@ -94,8 +94,8 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
         % upper then low limit -- near the wall is bad, for example.
         % and then to cut out a little box.
         % Extrapolate data to replace the near wall bad data
-        xmin = 50; % 
-        xmax = 325; % 
+        xmin = 230; % 
+        xmax = 310; % 
         dye_calib_frame( 1:max(find(X < xmin)),:) = NaN;
         dye_calib_frame( min(find(X > xmax)):end,:) = NaN;
         dye_calib_frame = inpaintn(dye_calib_frame);
@@ -138,13 +138,10 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
                 [X3, Y3] = meshgrid(X, Y);  % reformatted x and y coordinates
                 
 
-                % TODO: there is a problem here with the code
                 ci = interp2(X3, Y3, dye_calib_frame', xi, yi);  % interpolating beam
                 P = polyfit(R2(~isnan(ci)), ci(~isnan(ci)), 1);  % fitting curve to beam interpolation
                 ci(isnan(ci)) = polyval(P, R2(isnan(ci)));  % replacing NaNs with curve points
 
-                % TODO: need to figure out what's going here, especially the last
-                % line of the loop
                 ylow = y_high_end;
                 yhigh = y_extra;
                 

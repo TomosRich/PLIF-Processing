@@ -57,12 +57,14 @@ parameters.normalize_energy_monitor = true;  % normalize by the laser energy mon
 
 % Calibration steps -- this function squashes all five calibration steps into
 % one function call to calculate calibration coefficients
-calib_calculate_coefficients(directories, parameters, image_type, num_images, run_name, dye_conc_mg_L);
+%calib_calculate_coefficients(directories, parameters, image_type, num_images, run_name, dye_conc_mg_L);
 % Apply calibration and generate summary statistics
 apply_calibration_coefficients(directories, parameters, image_type, run_name, save_inst, num_images, ...
                                dye_release_conc);
-% Graph printing to test code functionality
 print_test_diagrams
+% Output calibration images, background
+% Output Pre calibration images, post background subtract, fully processed
+% Output mean, var
 
 function print_test_diagrams
 close all
@@ -114,16 +116,6 @@ ylim([-138 150])
 %clim([-6 -1])
 set(gca, 'YDir', 'normal');
 title('Fully processed calibration image for 0.05 mg/l dye tank')
-disp(' ')
-disp('Figure 1 subplot 1 shows the background, this image should have low but positive pixel values')
-disp(' ')
-disp('Figure 1 subplots 3 and 5 show unprocessed calibrations, these should have count values roughly mid way between')
-disp('zero and the maximum pixel depth of your camera')
-disp(' ')
-disp('Figure 1 subplots 2 and 4 show processed calibration images, these should have similar values to the unprocessed ones')
-disp('but the shape of the calibration tank should not be visible. Visual artifacts should be minimal.')
-disp(' ')
-
 
 figure(2);
 clf(2);
@@ -172,9 +164,7 @@ clim([-10 -7])
 set(gca, 'YDir', 'normal');
 title('Concentration variance over 20 snapshots, on log10 scale')
 
-disp('Raw plif image (figure 2 subplot 1) should have pixel values around 3 : 5 where dye is present, depending on your camera pixel depth')
-disp(' ')
-disp('Processed plif image (figure 2 subplot 2) should have pixel values around -3 : -5 where')
-disp('dye is present, depending on your camera pixel depth')
+disp('Raw plif image (figure 2 subplot 1) should have pixel values around 3-5 depending on ')
+
 
 end
