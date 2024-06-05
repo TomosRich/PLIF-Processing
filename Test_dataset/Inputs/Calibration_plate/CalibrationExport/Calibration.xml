@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<Calibration Version="2" CalibrationIdentifier="230313_125302" SourceSetPath="D:/Raw Data/Downstream Planar City PIV-PLIF" SourceSetDateTime="1/18/23 2:07 PM">
+	<CoordinateSystemsForEachView CoordinateSystemIdentifier="0">
+		<CoordinateSystem FieldOfView="SameForAllCameras">
+			<CoordinateMapper CameraIdentifier="1" Type="Polynomial3rdOrder" GroupId="1">
+				<PolynomialParameters>
+					<PolynomialModelSubType Value="3D" />
+					<CommonParameters>
+						<FitError RMS="0.2314721391724931" />
+						<CoordinateSystemOrientation Value="RightHanded" />
+						<CorrectedImageSize Width="3092" Height="2075" />
+						<RegionWithinCorrectedImage x="0" y="0" Width="3092" Height="2075" />
+						<OriginalImageSize Width="2560" Height="2160" />
+						<PixelPerMmFactor Value="6.6631709964903747" />
+					</CommonParameters>
+					<FitErrors>
+						<Plane0 RMS="0.23097077271438179" />
+						<Plane1 RMS="0.2319735056306044" />
+					</FitErrors>
+					<Scales>
+						<LinearScaleX FactorMmPerPixel="0.15007869384212411" OffsetMm="-244.48889832130033" Unit="mm" Description="" />
+						<LinearScaleY FactorMmPerPixel="-0.15007869384212411" OffsetMm="27.098773233708837" Unit="mm" Description="" />
+						<LinearScaleZ FactorMmPerPixel="0.15007869384212411" OffsetMm="0" Unit="mm" Description="" />
+						<LinearScaleI FactorMmPerPixel="1" OffsetMm="0" Unit="" Description="" />
+					</Scales>
+					<Transformations ChipSizeWidth="2560" ChipSizeHeight="2160" AoiOriginX="0" AoiOriginY="0" BinningX="1" BinningY="1" FrameRotation="0" />
+					<PolynomialMapping>
+						<ZPosition Value="0" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="2560" ny="2160" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="275.29504624347805" a_s="215.75748912837773" a_s2="1.5886433077582838" a_s3="-1.0332185983674753" a_t="6.567024532461927" a_t2="-0.053533320403152868" a_t3="-0.59823920918505469" a_st="5.4670922367155628" a_s2t="-0.35054434321762834" a_st2="-0.36378610674388245" />
+							<CoefficientsB b_o="-402.16043491606376" b_s="-7.3011218933859938" b_s2="0.26284189641071654" b_s3="-0.28225552130456777" b_t="179.48060420856555" b_t2="4.6102789814636829" b_t3="-0.57554622726907323" b_st="1.8287559072648421" b_s2t="-0.24051206970807912" b_st2="0.52991599489421581" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+					<PolynomialMapping>
+						<ZPosition Value="-13.326341992980746" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="3063.8986971394502" ny="2585.164525711411" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="330.63576189522882" a_s="257.41392135305057" a_s2="2.6129502445108894" a_s3="-3.1394016587335583" a_t="7.2713825315289196" a_t2="-0.064319946424899063" a_t3="1.0208863990898085" a_st="7.6213416335027926" a_s2t="-1.2064369025831594" a_st2="-0.79476720982717786" />
+							<CoefficientsB b_o="-401.74043178877025" b_s="-8.8606618196842373" b_s2="0.49679808935923425" b_s3="0.095543405073121396" b_t="214.24694438122839" b_t2="6.5413714608441316" b_t3="-0.50458449366798552" b_st="2.5079136528058763" b_s2t="-1.7396023550026691" b_st2="0.51115060778628341" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+				</PolynomialParameters>
+			</CoordinateMapper>
+			<CoordinateMapper CameraIdentifier="2" Type="Polynomial3rdOrder" GroupId="1">
+				<PolynomialParameters>
+					<PolynomialModelSubType Value="3D" />
+					<CommonParameters>
+						<FitError RMS="0.85081954461353682" />
+						<CoordinateSystemOrientation Value="RightHanded" />
+						<CorrectedImageSize Width="3092" Height="2075" />
+						<RegionWithinCorrectedImage x="0" y="0" Width="3092" Height="2075" />
+						<OriginalImageSize Width="2048" Height="2048" />
+						<PixelPerMmFactor Value="6.6631709964903747" />
+					</CommonParameters>
+					<FitErrors>
+						<Plane0 RMS="1.7016390892270736" />
+						<Plane1 RMS="0" />
+					</FitErrors>
+					<Scales>
+						<LinearScaleX FactorMmPerPixel="0.15007869384212411" OffsetMm="-244.48889832130033" Unit="mm" Description="" />
+						<LinearScaleY FactorMmPerPixel="-0.15007869384212411" OffsetMm="27.098773233708837" Unit="mm" Description="" />
+						<LinearScaleZ FactorMmPerPixel="0.15007869384212411" OffsetMm="0" Unit="mm" Description="" />
+						<LinearScaleI FactorMmPerPixel="1" OffsetMm="0" Unit="" Description="" />
+					</Scales>
+					<Transformations ChipSizeWidth="2048" ChipSizeHeight="2048" AoiOriginX="0" AoiOriginY="0" BinningX="1" BinningY="1" FrameRotation="0" />
+					<PolynomialMapping>
+						<ZPosition Value="0" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="2048" ny="2048" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="1504.4940438417693" a_s="-1.7788614613970262" a_s2="-7.8571693674162217" a_s3="16.474120644635082" a_t="2.511621089424986" a_t2="23.45334186481055" a_t3="-46.480108506670319" a_st="8.1964312553033416" a_s2t="-26.72746409620504" a_st2="32.32628489315762" />
+							<CoefficientsB b_o="60.385217077786038" b_s="-12.999529902519317" b_s2="16.066811687602996" b_s3="-20.599257052642528" b_t="-5.0480581094189798" b_t2="-52.69580177739158" b_t3="118.10258465517843" b_st="32.675067865344111" b_s2t="18.65149354081624" b_st2="-78.013564781885265" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+					<PolynomialMapping>
+						<ZPosition Value="-13.326341992980746" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="2451.1189577115601" ny="2451.1189577115601" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="1448.9312629524436" a_s="201.55947885578001" a_s2="0" a_s3="0" a_t="0" a_t2="0" a_t3="0" a_st="0" a_s2t="0" a_st2="0" />
+							<CoefficientsB b_o="55.683012733006365" b_s="0" b_s2="0" b_s3="0" b_t="201.55947885578001" b_t2="0" b_t3="0" b_st="0" b_s2t="0" b_st2="0" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+				</PolynomialParameters>
+			</CoordinateMapper>
+			<CoordinateMapper CameraIdentifier="3" Type="Polynomial3rdOrder" GroupId="1">
+				<PolynomialParameters>
+					<PolynomialModelSubType Value="3D" />
+					<CommonParameters>
+						<FitError RMS="1.0218549947588085" />
+						<CoordinateSystemOrientation Value="RightHanded" />
+						<CorrectedImageSize Width="3092" Height="2075" />
+						<RegionWithinCorrectedImage x="0" y="0" Width="3092" Height="2075" />
+						<OriginalImageSize Width="2048" Height="2048" />
+						<PixelPerMmFactor Value="6.6631709964903747" />
+					</CommonParameters>
+					<FitErrors>
+						<Plane0 RMS="2.043709989517617" />
+						<Plane1 RMS="0" />
+					</FitErrors>
+					<Scales>
+						<LinearScaleX FactorMmPerPixel="0.15007869384212411" OffsetMm="-244.48889832130033" Unit="mm" Description="" />
+						<LinearScaleY FactorMmPerPixel="-0.15007869384212411" OffsetMm="27.098773233708837" Unit="mm" Description="" />
+						<LinearScaleZ FactorMmPerPixel="0.15007869384212411" OffsetMm="0" Unit="mm" Description="" />
+						<LinearScaleI FactorMmPerPixel="1" OffsetMm="0" Unit="" Description="" />
+					</Scales>
+					<Transformations ChipSizeWidth="2048" ChipSizeHeight="2048" AoiOriginX="0" AoiOriginY="0" BinningX="1" BinningY="1" FrameRotation="0" />
+					<PolynomialMapping>
+						<ZPosition Value="0" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="2048" ny="2048" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="-215.86793843877012" a_s="7.3795192365776119" a_s2="2.2569171256341631" a_s3="-4.8751881914695261" a_t="1.2720949123597629" a_t2="43.574836610810401" a_t3="-72.189940627641761" a_st="17.745942079295727" a_s2t="22.513600967258835" a_st2="11.369759663693996" />
+							<CoefficientsB b_o="7.212145929482972" b_s="2.3997335717224737" b_s2="-7.0386009362709228" b_s3="-15.244131862944499" b_t="4.1006391957128132" b_t2="-54.075450671145248" b_t3="116.85976160476139" b_st="-21.324524687411376" b_s2t="-17.27986263488588" b_st2="27.040035910987378" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+					<PolynomialMapping>
+						<ZPosition Value="-13.326341992980746" />
+						<Origin s_o="1629.0713362583726" t_o="180.56375985131842" />
+						<NormalisationFactor nx="2451.1189577115601" ny="2451.1189577115601" />
+						<Polynomial3rdOrder>
+							<CoefficientsA a_o="-194.69918382878859" a_s="201.55947885578001" a_s2="0" a_s3="0" a_t="0" a_t2="0" a_t3="0" a_st="0" a_s2t="0" a_st2="0" />
+							<CoefficientsB b_o="15.878146938543978" b_s="0" b_s2="0" b_s3="0" b_t="201.55947885578001" b_t2="0" b_t3="0" b_st="0" b_s2t="0" b_st2="0" />
+						</Polynomial3rdOrder>
+					</PolynomialMapping>
+				</PolynomialParameters>
+			</CoordinateMapper>
+		</CoordinateSystem>
+	</CoordinateSystemsForEachView>
+</Calibration>

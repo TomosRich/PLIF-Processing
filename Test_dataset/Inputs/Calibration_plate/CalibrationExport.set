@@ -1,0 +1,12 @@
+// set file <D:/Raw Data/Downstream Planar City PIV-PLIF/Properties//Calibration.set> created by DaVis
+
+#GROUP Sets
+SetType = 131072;
+SetGroups = "";
+SetTime = "Mon Mar 13 12:53:04 2023";
+SetComments = "";
+SetStart = 1;
+SetInc = 1;
+SetSourceSet = "";
+SetViewCallback = "SetupDialogIMGCAL_ShowCalibrationSet";
+SetLoadCallback = "";

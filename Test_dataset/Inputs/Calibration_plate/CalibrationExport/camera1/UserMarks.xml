@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<ShapeOverlay index="0" version="1" class="MarkDefinition">
+		<ID class="uint32_t" value="4" />
+		<Name class="string" value="" />
+		<Color class="color" version="1">
+			<rgba class="uint32_t" value="4294901760" />
+		</Color>
+		<Shape class="MarkDefinition">
+			<Name class="string" value="" />
+			<IsInside class="bool" value="true" />
+			<Fixed class="bool" value="false" />
+			<Interactive class="bool" value="true" />
+			<HasContextMenu class="bool" value="false" />
+			<Enabled class="bool" value="true" />
+			<SimpleColorMode class="bool" value="true" />
+			<Tag class="int32" value="0" />
+			<TagList version="1" class="map">
+				<item index="0" version="1" class="pair">
+					<key class="string" value="CameraId" />
+					<value class="string" value="1" />
+				</item>
+				<item index="1" version="1" class="pair">
+					<key class="string" value="ViewId" />
+					<value class="string" value="0" />
+				</item>
+			</TagList>
+			<Position1 class="point2DF" version="1">
+				<x class="double" value="1354.99960116426" />
+				<y class="double" value="585.225610699496" />
+			</Position1>
+			<Position2 class="point2DF" version="1">
+				<x class="double" value="1466.51814080852" />
+				<y class="double" value="584.238720968131" />
+			</Position2>
+			<Position3 class="point2DF" version="1">
+				<x class="double" value="1356.97338062699" />
+				<y class="double" value="473.707071055241" />
+			</Position3>
+			<IsMirrored class="bool" value="false" />
+		</Shape>
+	</ShapeOverlay>
+</root>

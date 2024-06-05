@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<CalibrationPlateDataBase>
+	<Version value="1.1" />
+	<Name value="UserPlate dual-plane">
+		<Group value="Legacy" />
+		<NameAlias value="UserPlate dual-plane" />
+		<MarkForm value="DOT" />
+		<MarkSizeInMm value="2.000000" />
+		<DistanceMarkToMarkInMm value="10.000000" />
+		<DistancePlaneToPlaneInMm value="2.000000" />
+		<PlateDimension WidthInMm="200" HeightInMm="200" ThicknessInMm="7" />
+		<IsGrooveOrientationShifted value="1" />
+		<HasDiagonalPattern value="1" />
+		<AreColorsInverted value="1" />
+		<PlanesFrontSideTopToBottom>
+			<Plane NoOfMarksX="19" NoOfMarksY="19" NoOfMarksTotal="361" PlaneOffsetX="0" PlaneOffsetY="0">
+				<FiducialSymbols />
+			</Plane>
+			<Plane NoOfMarksX="19" NoOfMarksY="19" NoOfMarksTotal="361" PlaneOffsetX="10" PlaneOffsetY="0">
+				<FiducialSymbols />
+			</Plane>
+		</PlanesFrontSideTopToBottom>
+	</Name>
+</CalibrationPlateDataBase>
