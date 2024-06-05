@@ -37,10 +37,11 @@ directories.folder_save = 'E:\Downstream_planar_p100\PLIF';
 
 % These are parameters which control some of the finer details of the
 % calibration process. Not all of them are required, and a default value will
-% be used if not provided.
+% be used if not provided. Using defaults is highly discoruaged and will not give accurate results 
+% for your individual case. It is included to help in running the code initially.
 
-parameters.y0 = -81.173-51.2-135;               % Vertical offsets in [UNITS???]
-parameters.x0 = 190;                     % Horizontal offsets in [UNITS???]
+parameters.y0 = -81.173-51.2-135;               % Vertical offsets typically in mm
+parameters.x0 = 190;                     % Horizontal offsets also typically in mm
 parameters.epsilon = 11.05;               % epsilon value -- can be calculated elsewhere
 parameters.x_loc = 50;                       % calibration distance, default is mm
 parameters.y_loc = 50;                       % calibration distance, default is mm
