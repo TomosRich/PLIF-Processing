@@ -25,4 +25,8 @@ X limits for interpolation are defined on lines 97-98 of calib_trace_rays.m.
 As of 05/06/2024 polar interpolation is advised for most cases.
 All attenuation correction is carried out between y = 0 and y = tank height. It is advised to set a y offset such that y = 0  is at the bottom of the calibration tank, even if this is outside the camera field of view.
 
+It is advised to clone this repository directly and either add it to path when running matlab from a different folder, or build a file in the style of example.m to read and write data to designated folders. These should not be the same folders as the code is stored in due to PLIF inputs and outputs often containing thousands of files.
+
+The images in the main folder of this repository are used for compiling the paper submitted to the Journal of Open Source Software.
+
 Good luck, PLIF is a finicky science :)
