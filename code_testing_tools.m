@@ -62,8 +62,8 @@ calib_calculate_coefficients(directories, parameters, image_type, num_images, ru
 apply_calibration_coefficients(directories, parameters, image_type, run_name, save_inst, num_images, ...
                                dye_release_conc);
 % Graph printing to test code functionality
-print_test_diagrams
-
+print_test_diagrams % if entering user inputs with test dataset then note that it is designed to 
+                    % use the cross in the middle as the origin, and each dot is separated by 10mm
 function print_test_diagrams
 close all
 
