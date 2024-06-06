@@ -6,7 +6,8 @@ at the University of Southampton and has not been designed to run without config
 The script code_testing_tools.m is designed to run directly from the cloned file using the built in functions and data. It has been included as a direct example 
 of the code working as intended, and also as a check of the package's functionality.
 To use it to test your own data it is advised to copy the data into the test_data/inputs folder, and delete the files in the output folder in order to reset user inputs.
-If you would like to practice an example of entering the user inputs then empty the output folder prior to running code_testing_tools.m
+If you would like to practice an example of entering the user inputs then empty the output folder prior to running code_testing_tools.m without resetting the input data. 
+Calibration plate dot spacing in the example images is 10mm and the intended origin is the cross in the center of the calibration plate.
 
 A few example images have been included in the Test_dataset folder, these were taken during experiments carried out at the University of Southampton.
 They are included for use in code_testing_tools.m, in order to check that the code is functioning correctly.
