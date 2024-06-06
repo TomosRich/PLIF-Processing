@@ -1,16 +1,16 @@
 # PLIF-Processing
 Calibration and post processing software for Planar Laser Induced Fluorescence Imaging
 
-Functions are run from a main file, an example of a main file is included and labeled example.m, this file is copied directly from an experimental case carried out
+Functions are run from a main file, an example of a main file is included and labeled main_example.m, this file is copied directly from an experimental case carried out
 at the University of Southampton and has not been designed to run without configuring to the user's case. 
-The script code_testing_tools.m is designed to run directly from the cloned file using the built in functions and data. It has been included as a direct example 
+The script main_testing_tools.m is designed to run directly from the cloned file using the built in functions and data. It has been included as a direct example 
 of the code working as intended, and also as a check of the package's functionality.
 To use it to test your own data it is advised to copy the data into the test_data/inputs folder, and delete the files in the output folder in order to reset user inputs.
-If you would like to practice an example of entering the user inputs then empty the output folder prior to running code_testing_tools.m without resetting the input data. 
+If you would like to practice an example of entering the user inputs then empty the output folder prior to running main_testing_tools.m without resetting the input data. 
 Calibration plate dot spacing in the example images is 10mm and the intended origin is the cross in the center of the calibration plate.
 
 A few example images have been included in the Test_dataset folder, these were taken during experiments carried out at the University of Southampton.
-They are included for use in code_testing_tools.m, as explained above.
+They are included for use in main_testing_tools.m, as explained above.
 These images were taken using LaVision equipment and are consequently in .imx format. Therefore processing them requires having LaVision's 'readimx-v2.1.9' file in the path. These files can be seen in the git ignore included in this folder but could not be directly added to the repository. However these are available from LaVision.
 
 This code is designed to convert fields of dye fluorescence into fields of dye concentration.
