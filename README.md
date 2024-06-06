@@ -10,8 +10,8 @@ If you would like to practice an example of entering the user inputs then empty 
 Calibration plate dot spacing in the example images is 10mm and the intended origin is the cross in the center of the calibration plate.
 
 A few example images have been included in the Test_dataset folder, these were taken during experiments carried out at the University of Southampton.
-They are included for use in code_testing_tools.m, in order to check that the code is functioning correctly.
-These images were taken using LaVision equipment and are consequently in .imx format. Therefore processing them requires having LaVision's 'readimx-v2.1.9' file in the path.
+They are included for use in code_testing_tools.m, as explained above.
+These images were taken using LaVision equipment and are consequently in .imx format. Therefore processing them requires having LaVision's 'readimx-v2.1.9' file in the path. These files can be seen in the git ignore included in this folder but could not be directly added to the repository.
 
 This code is designed to convert fields of dye fluorescence into fields of dye concentration.
 Running this code can be divided into two sections; create calibration, and apply calibration. 
