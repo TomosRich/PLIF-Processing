@@ -12,7 +12,7 @@
 %
 
 % Add the required libraries/packages to the MATLAB path
-
+addpath('Sub_functions');
 addpath('readimx-v2.1.9');
 
 %% Parameters
