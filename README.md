@@ -1,5 +1,5 @@
 # PLIF-Processing
-##Calibration and post processing software for Planar Laser Induced Fluorescence (PLIF) Imaging
+## Calibration and post processing software for Planar Laser Induced Fluorescence (PLIF) Imaging
 
 ## Statement of Need
 
@@ -27,7 +27,7 @@ These images were taken using LaVision equipment and are consequently in .imx fo
 
 The images in the main folder of this repository are used for compiling the paper submitted to the Journal of Open Source Software.
 
-### Code Usage
+## Code Usage
 
 This code is designed to convert fields of dye fluorescence into fields of dye concentration.
 Running this code can be divided into two sections; create calibration, and apply calibration. 
