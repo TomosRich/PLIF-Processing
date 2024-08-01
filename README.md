@@ -1,5 +1,5 @@
 # PLIF-Processing
-## Calibration and post processing software for Planar Laser Induced Fluorescence (PLIF) Imaging
+Calibration and post processing software for Planar Laser Induced Fluorescence (PLIF) Imaging
 
 ## Statement of Need
 
