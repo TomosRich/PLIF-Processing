@@ -9,7 +9,7 @@ The publishing of this code will hopefully remove one of these barriers of entry
 
 ## Installation
 
-It is advised to clone this repository directly and either add it to path when running matlab from a different folder, or build a file in the style of example.m to read and write data to designated folders. These should not be the same folders as the code is stored in due to PLIF inputs and outputs often containing thousands of files.
+It is advised to clone this repository directly and either add it to path when running matlab from a different folder, or build a file in the style of example.m to read and write data to designated folders. These should not be the same folders as the code is stored in due to PLIF inputs and outputs often containing thousands of files. The easiest way to use this code is to run main_testing_tools.m directly from the cloned folder.
 
 ## Package Structure
 
