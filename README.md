@@ -47,8 +47,8 @@ For questions relating to this code and PLIF in general you are welcome to reach
 
 ## License 
 
-This code is released under the [MIT License](https://github.com/TomosRich/PLIF-Processing/blob/c39caa88c8ee45d53652856914d5cbd8655d92e4/LICENSE)
+This code is released under the [MIT License](https://github.com/TomosRich/PLIF-Processing/blob/c39caa88c8ee45d53652856914d5cbd8655d92e4/LICENSE) and as such is free to use.
 
 ## Authors
 
-This code was written and published by Tomos Rich and Dr Christina Vanderwel, with help from Dr Edward Parkinson
+This code was written and published by Tomos Rich and Dr Christina Vanderwel, with help from Dr Edward Parkinson.
