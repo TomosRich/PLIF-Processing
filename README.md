@@ -43,7 +43,7 @@ All attenuation correction is carried out between y = 0 and y = tank height. It 
 
 ## Help with PLIF
 
-For questions relating to this code and PLIF in general you are welcome to reach out to the corresponding author of this repository and paper (tom.jared.rich@gmail.com).
+For questions relating to this code and PLIF in general you are welcome to reach out to the corresponding author of this repository and paper (tom.jared.rich@gmail.com) or (tjr1u19@soton.ac.uk).
 
 ## License 
 
