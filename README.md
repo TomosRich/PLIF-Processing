@@ -1,5 +1,17 @@
 # PLIF-Processing
-Calibration and post processing software for Planar Laser Induced Fluorescence Imaging
+Calibration and post processing software for Planar Laser Induced Fluorescence (PLIF) Imaging
+
+## Statement of Need
+
+The unavailablity of PLIF post-processing software currently limits the number of fluid dynamics research groups that take advantage of this measurement method. 
+Groups who are able to carry out PLIF measurements require specialist equipment, expertise, and code to make measurements at the high accuracy level PLIF is capable of. 
+The publishing of this code will hopefully remove one of these barriers of entry to research groups who want to begin using PLIF measurements.
+
+## Installation
+
+It is advised to clone this repository directly and either add it to path when running matlab from a different folder, or build a file in the style of example.m to read and write data to designated folders. These should not be the same folders as the code is stored in due to PLIF inputs and outputs often containing thousands of files. The easiest way to use this code is to run main_testing_tools.m directly from the cloned folder.
+
+## Package Structure
 
 Functions are run from a main file, an example of a main file is included and labeled main_example.m, this file is copied directly from an experimental case carried out
 at the University of Southampton and has not been designed to run without configuring to the user's case. 
@@ -13,6 +25,10 @@ A few example images have been included in the Test_dataset folder, these were t
 They are included for use in main_testing_tools.m, as explained above.
 These images were taken using LaVision equipment and are consequently in .imx format. Therefore processing them requires having LaVision's 'readimx-v2.1.9' file in the path. These files can be seen in the git ignore included in this folder but could not be directly added to the repository. However these are available from LaVision.
 
+The images in the main folder of this repository are used for compiling the paper submitted to the Journal of Open Source Software.
+
+## Code Usage
+
 This code is designed to convert fields of dye fluorescence into fields of dye concentration.
 Running this code can be divided into two sections; create calibration, and apply calibration. 
 Creating a calibration requires images in which dye of known concentrations is fluorescing in the same location as the experimental images.
@@ -25,8 +41,14 @@ X limits for interpolation are defined on lines 97-98 of calib_trace_rays.m.
 As of 05/06/2024 polar interpolation is advised for most cases.
 All attenuation correction is carried out between y = 0 and y = tank height. It is advised to set a y offset such that y = 0  is at the bottom of the calibration tank, even if this is outside the camera field of view.
 
-It is advised to clone this repository directly and either add it to path when running matlab from a different folder, or build a file in the style of example.m to read and write data to designated folders. These should not be the same folders as the code is stored in due to PLIF inputs and outputs often containing thousands of files.
+## Help with PLIF
 
-The images in the main folder of this repository are used for compiling the paper submitted to the Journal of Open Source Software.
+For questions relating to this code and PLIF in general you are welcome to reach out to the corresponding author of this repository and paper (tom.jared.rich@gmail.com) or (tjr1u19@soton.ac.uk).
 
-Good luck, PLIF is a finicky science :)
+## License 
+
+This code is released under the [MIT License](https://github.com/TomosRich/PLIF-Processing/blob/c39caa88c8ee45d53652856914d5cbd8655d92e4/LICENSE) and as such is free to use.
+
+## Authors
+
+This code was written and published by Tomos Rich and Dr Christina Vanderwel, with help from Dr Edward Parkinson.
