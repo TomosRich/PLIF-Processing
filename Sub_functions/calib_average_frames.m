@@ -54,7 +54,7 @@ function calib_average_frames(directories, concentrations, image_type, y0, x0, x
 
         % Use first image to get the coordinates from the image
         image_fp = strcat(directories.folder_main, fsep, concentration_files{i}, fsep, 'B', num2str(1, '%04d'), '.', image_type);
-        image = read_image(image_fp);
+        image = imread(image_fp)';
 
         % Get Coordinates
         nx = size(image, 1);
@@ -74,7 +74,7 @@ function calib_average_frames(directories, concentrations, image_type, y0, x0, x
             % Load image
             image_fp = strcat(directories.folder_main, fsep, concentration_files{i}, fsep, 'B', num2str(j, '%04d'), '.', image_type);
             em_fp = strcat(directories.folder_main, fsep, concentration_files{i}, fsep, 'EnergyMonitor_ref2000', fsep, 'B00001.im7');
-            image = read_image(image_fp);
+            image = imread(image_fp)';
 
             % Normalise PLIF frame by device data, and add to the average matrix
             % This should only be done with LaVision laser devices

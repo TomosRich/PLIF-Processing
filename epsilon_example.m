@@ -34,7 +34,7 @@ parameters.beta_polar_interp = true;         % enable polar interpolation along 
 parameters.normalize_energy_monitor = true;  % normalize by the laser energy monitor for LaVision devices
 concentrations = dye_conc_mg_L;
 % We need to do some calibration processing to begin with
-image_type = 'im7'; 
+image_type = 'tif'; 
 
 calib_average_frames(directories, concentrations, image_type, parameters.y0, parameters.x0, parameters.x_loc, parameters.y_loc, parameters.normalize_energy_monitor);
 calib_merge_frames(directories, concentrations);

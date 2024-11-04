@@ -26,7 +26,7 @@ save_inst = true;           % Should instantaneous data be saved, as well as ave
 num_images = 2000;            % Number of images to process
 dye_release_conc = 60;      % Dye release concentration (usually in mg/L)
 dye_conc_mg_L = [0.05, 0.03, 0.00];  % Dye concentration variations
-image_type = 'im7';          % The image file extension
+image_type = 'tif';          % The image file extension
 
 % This struct defines the various directories which contain the LIF images and
 % calibration data, as well as the directory to store the program's output

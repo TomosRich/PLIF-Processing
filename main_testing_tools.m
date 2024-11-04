@@ -13,7 +13,6 @@
 
 % Add the required libraries/packages to the MATLAB path
 addpath('Sub_functions');
-addpath('readimx-v2.1.9');
 
 %% Parameters
 % Set the run time parameters first. These parameters are split between
@@ -24,7 +23,7 @@ save_inst = true;           % Should instantaneous data be saved, as well as ave
 num_images = 20;            % Number of images to process
 dye_release_conc = 60;      % Dye release concentration (usually in mg/L)
 dye_conc_mg_L = [0.05, 0.03, 0.00];  % Dye concentration variations
-image_type = 'im7';          % The image file extension
+image_type = 'tif';          % The image file extension
 
 % This struct defines the various directories which contain the LIF images and
 % calibration data, as well as the directory to store the program's output
@@ -49,6 +48,7 @@ parameters.theta_line_high = 10;              % trace_ray polar interpolation bo
 parameters.tank_height = 156;                 % the height of the tank above the origin, code is easiest to run when setting origin to tank floor
 parameters.beta_polar_interp = true;         % enable polar interpolation along rays - this is a BETA feature
 parameters.normalize_energy_monitor = true;  % normalize by the laser energy monitor for LaVision devices
+%parameters.image_type = 'tif';
 
 %% Perform the calibration calculations
 % Once the parameters are set, we can call the two functions to calculate
@@ -128,7 +128,7 @@ disp(' ')
 figure(2);
 clf(2);
 
-raw_plif = read_image('Test_dataset\Inputs\Unprocessed_LIF\B0018.im7');
+raw_plif = imread('Test_dataset\Inputs\Unprocessed_LIF\B0018.tif')';
 processed_plif = load('Test_dataset\Outputs\Test_PLIF_18.mat');
 mean_plif = load('Test_dataset\Outputs\Test_PLIFstats.mat');
 
@@ -178,3 +178,8 @@ disp('Processed plif image (figure 2 subplot 2) should have pixel values around 
 disp('dye is present, depending on your camera pixel depth')
 
 end
+%{
+cb = colorbar(); 
+ylabel(cb,'$\dot{m}_{Rhodamine}$', 'Interpreter','latex','FontSize',16,'Rotation',270)
+log_{10}C/C_s
+%}

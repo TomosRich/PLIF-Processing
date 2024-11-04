@@ -24,7 +24,7 @@ function [background_intensity] = get_background_intensity(i, image_folder, imag
 
 
     fsep = filesep;
-    image = read_image(strcat(image_folder, fsep, 'B', num2str(i, '%04d'), '.', image_type));
+    image = imread(strcat(image_folder, fsep, 'B', num2str(i, '%04d'), '.', image_type))';
 
 
     nx = size(image, 1);

@@ -31,7 +31,7 @@ function PLIF = get_plif_image(i, directories, image_type, background_frame, A_c
 
 
     fsep = filesep;
-    image = read_image(strcat(directories.folder_plif, fsep, 'B', num2str(i, '%04d'), '.', image_type));
+    image = imread(strcat(directories.folder_plif, fsep, 'B', num2str(i, '%04d'), '.', image_type))';
     em_fp = strcat(directories.folder_plif, fsep , '..' , fsep, 'EnergyMonitor_ref2000', fsep, 'B00001.im7');
 
 
