@@ -125,8 +125,8 @@ function calib_trace_rays(directories, concentrations, y_extra, y_high_end, thet
         if polar_interp
         theta_line_low = -atand((min(X)-origin_X)/(max(Y)-origin_Y));
         theta_line_high = -atand((max(X)-origin_X)/(max(Y)-origin_Y));
-        interpolation_r = 8; % Input of polar interpolation ratio, 1 means all polar
-        interpolation_theta = 8;
+        interpolation_r = 12; % Input of polar interpolation ratio, 1 means all polar
+        interpolation_theta = 12;
         theta_interp_step = (theta_line_high-theta_line_low)/((size(X,2)+size(Y,2))/2)*interpolation_theta;
         R_resolution = abs(min(Y(1)-Y(2), X(1)-X(2)))*interpolation_r;
 

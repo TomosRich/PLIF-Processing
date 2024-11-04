@@ -30,11 +30,12 @@ function [xy_scale, xy_offset] = get_scale_origin(calib_image, x_loc, y_loc)
 
     [~, ~, ext] = fileparts(calib_image);
     if strcmp(ext, '.im7') == true
-        showimx(readimx(calib_image).Frames{1});
+        showimx(calib_image);
         imcontrast(gca);
+    
     else
-        caxis([min(calib_image(:)) max(calib_image(:))]);
-        imagesc(read_image(calib_image));
+        imshow(calib_image);
+        imcontrast(gca)%caxis([min(calib_image(:)) max(calib_image(:))]);
     end
 
     hold on;

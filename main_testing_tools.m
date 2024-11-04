@@ -20,7 +20,7 @@ addpath('Sub_functions');
 
 run_name = 'Test';   % A descriptive name for the experiment
 save_inst = true;           % Should instantaneous data be saved, as well as average? (true adds ~200 % to run time)
-num_images = 20;            % Number of images to process
+num_images = 100;            % Number of images to process
 dye_release_conc = 60;      % Dye release concentration (usually in mg/L)
 dye_conc_mg_L = [0.05, 0.03, 0.00];  % Dye concentration variations
 image_type = 'tif';          % The image file extension
@@ -38,7 +38,7 @@ directories.folder_save = 'Test_dataset\Outputs';
 
 parameters.y0 = -146.2;               % Vertical offsets in mm
 parameters.x0 = 190;                     % Horizontal offsets in mm
-parameters.epsilon = 11.05;               % epsilon value -- can be calculated elsewhere
+parameters.epsilon = 8.1;               % epsilon value -- can be calculated elsewhere
 parameters.x_loc = 70;                       % calibration distance, default is mm
 parameters.y_loc = 70;                       % calibration distance, default is mm
 parameters.y_extra = 25;                      % the lower y interpolation boundary in mm
@@ -62,9 +62,13 @@ calib_calculate_coefficients(directories, parameters, image_type, num_images, ru
 apply_calibration_coefficients(directories, parameters, image_type, run_name, save_inst, num_images, ...
                                dye_release_conc);
 % Graph printing to test code functionality
-print_test_diagrams % if entering user inputs with test dataset then note that it is designed to 
+print_test_diagrams(num_images) % if entering user inputs with test dataset then note that it is designed to 
                     % use the cross in the middle as the origin, and each dot is separated by 10mm
-function print_test_diagrams
+
+function print_test_diagrams(num_images)
+
+charlbl = compose("(%s)",('a':'z').');
+fontsize = 16;
 close all
 
 background_unprocessed = load('Test_dataset\Outputs\C-Calibration_C=0.00.mat');
@@ -82,6 +86,7 @@ axis equal tight;
 %clim([-6 -1])
 set(gca, 'YDir', 'normal');
 title('Background image')
+text(0.025,0.95,charlbl{1},'Units','normalized','FontSize',fontsize)
 
 subplot(3,2,3)
 imagesc(cal_03_unprocessed.X, cal_03_unprocessed.Y, (fliplr(cal_03_unprocessed.dye_calib_frame')));
@@ -89,6 +94,7 @@ colorbar;
 axis equal tight;
 set(gca, 'YDir', 'normal');
 title('Unprocessed calibration image for 0.03 mg/l dye tank')
+text(0.025,0.95,charlbl{2},'Units','normalized','FontSize',fontsize)
 
 subplot(3,2,5)
 imagesc(cal_05_unprocessed.X, cal_05_unprocessed.Y, (fliplr(cal_05_unprocessed.dye_calib_frame')));
@@ -96,6 +102,7 @@ colorbar;
 axis equal tight;
 set(gca, 'YDir', 'normal');
 title('Unprocessed calibration image for 0.05 mg/l dye tank')
+text(0.025,0.95,charlbl{4},'Units','normalized','FontSize',fontsize)
 
 subplot(3,2,4)
 imagesc(cal_03_processed.X, cal_03_processed.Y, real(fliplr((cal_03_processed.dye_calib_frame'))));
@@ -105,6 +112,7 @@ ylim([-138 150])
 %clim([-6 -1])
 set(gca, 'YDir', 'normal');
 title('Fully processed calibration image for 0.03 mg/l dye tank')
+text(0.025,0.95,charlbl{3},'Units','normalized','FontSize',fontsize)
 
 subplot(3,2,6)
 imagesc(cal_05_processed.X, cal_05_processed.Y, real(fliplr((cal_05_processed.dye_calib_frame'))));
@@ -114,13 +122,14 @@ ylim([-138 150])
 %clim([-6 -1])
 set(gca, 'YDir', 'normal');
 title('Fully processed calibration image for 0.05 mg/l dye tank')
+text(0.025,0.95,charlbl{5},'Units','normalized','FontSize',fontsize)
 disp(' ')
-disp('Figure 1 subplot 1 shows the background, this image should have low but positive pixel values')
+disp('Figure 1 subplot (a) shows the background, this image should have low but positive pixel values')
 disp(' ')
-disp('Figure 1 subplots 3 and 5 show unprocessed calibrations, these should have count values roughly mid way between')
-disp('zero and the maximum pixel depth of your camera')
+disp('Figure 1 subplots (b) and (d) show unprocessed calibrations, these should have count values roughly mid way between')
+disp('zero and the maximum pixel depth of your camera (for the example dataset this is 65536)')
 disp(' ')
-disp('Figure 1 subplots 2 and 4 show processed calibration images, these should have similar values to the unprocessed ones')
+disp('Figure 1 subplots (c) and (e) show processed calibration images, these should have similar values to the unprocessed ones')
 disp('but the shape of the calibration tank should not be visible. Visual artifacts should be minimal.')
 disp(' ')
 
@@ -141,6 +150,7 @@ ylim([-138 150])
 clim([3 4.6])
 set(gca, 'YDir', 'normal');
 title('Raw PLIF image, values equate to log10 measured count value of each pixel')
+text(0.025,0.95,charlbl{1},'Units','normalized','FontSize',fontsize)
 
 subplot(2,2,2)
 %processed instantaneous image
@@ -151,6 +161,7 @@ ylim([-138 150])
 clim([-5 -3.5])
 set(gca, 'YDir', 'normal');
 title('Fully processed PLIF image, values represent log10 local concentration at each pixel, normalised by source')
+text(0.025,0.95,charlbl{2},'Units','normalized','FontSize',fontsize)
 
 subplot(2,2,3)
 %mean concentration
@@ -160,7 +171,8 @@ axis equal tight;
 ylim([-138 150])
 clim([-5.2 -3.5])
 set(gca, 'YDir', 'normal');
-title('Mean concentration over 20 snapshots, on log10 scale')
+title(['Mean concentration over ', num2str(num_images) ' snapshots, on log10 scale'])
+text(0.025,0.95,charlbl{3},'Units','normalized','FontSize',fontsize)
 
 subplot(2,2,4)
 %concentration variance
@@ -170,12 +182,16 @@ axis equal tight;
 ylim([-138 150])
 clim([-10 -7])
 set(gca, 'YDir', 'normal');
-title('Concentration variance over 20 snapshots, on log10 scale')
+title(['Concentration variance over ', num2str(num_images) ' snapshots, on log10 scale'])
+text(0.025,0.95,charlbl{4},'Units','normalized','FontSize',fontsize)
 
-disp('Raw plif image (figure 2 subplot 1) should have pixel values around 3 : 5 where dye is present, depending on your camera pixel depth')
+disp('Raw plif image (figure 2 subplot (a)) should have pixel values around 3 : 5 where dye is present, depending on your camera pixel depth')
 disp(' ')
-disp('Processed plif image (figure 2 subplot 2) should have pixel values around -3 : -5 where')
+disp('Processed plif image (figure 2 subplot (b)) should have pixel values around -3 : -5 where')
 disp('dye is present, depending on your camera pixel depth')
+disp(' ')
+disp('Subplots (c) and (d) show the mean and variance of the concentration, it is expected that these are several orders of')
+disp('magnitude lower than the values in the instantaneous image')
 
 end
 %{
